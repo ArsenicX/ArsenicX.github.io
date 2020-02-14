@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>HttpUrlConnection | ArsenicX</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1581681687290">
+<link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="layout: post
+title:  &quot;HttpURLConnection的post提交请求&quot;
+date:   2019-01-07 17:51:54
+categories: Android
+comments: fa..." />
+    <meta name="keywords" content="Android" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://ArsenicX.github.io/">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1581681687290" class="site-logo">
+        <h1 class="site-title">ArsenicX</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/AhVo-DHVi/" class="site-nav">
+            Java
+          </a>
+        
+      
+        
+          <a href="/TYk3qS2vU" class="site-nav">
+            Git
+          </a>
+        
+      
+        
+          <a href="/CYr9O31-t/" class="site-nav">
+            android
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      <a href="https://github.com/ArsenicX" target="_blank">My Github</a>
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://ArsenicX.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">HttpUrlConnection</h2>
+            <div class="post-date">2020-02-14</div>
+            
+            <div class="post-content" v-pre>
+              <p>layout: post</p>
+<p>title:  &quot;HttpURLConnection的post提交请求&quot;</p>
+<p>date:   2019-01-07 17:51:54</p>
+<p>categories: Android<br>
+comments: false</p>
+<hr>
+<pre><code class="language-java">import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+ 
+public class HttpURLConnectionPost extends AppCompatActivity {
+    
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_action);
+        
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                postRequest();
+            }
+        }.start(); 
+    }
+ 
+    public void postRequest(){
+        BufferedReader reader = null;
+        HttpURLConnection conn= null;
+ 
+        try{
+            URL postUrl = new URL(&quot;http://www.123.cn&quot;); //Post请求的url，与get不同的是不需要带参数
+            conn= (HttpURLConnection) postUrl.openConnection(); //打开连接
+            conn.setDoOutput(true); //是否向conn输出. 因为是post请求, 参数要放在http正文内, 所以设为true
+            conn.setDoInput(true); //是否从conn读,默认为true, 具体说明见下面#1
+            conn.setRequestMethod(&quot;POST&quot;); //默认是 GET方式
+            conn.setUseCaches(false); //Post 请求不能使用缓存
+            connection.setConnectTimeout(5000);
+            conn.setInstanceFollowRedirects(true); //设置本次连接是否自动重定向
+            conn.setConnectTimeout(5000);
+            conn.setRequestProperty(&quot;&quot;,&quot;&quot;); //配置本次连接的Content-type, 具体说明见下面#2
+            // 连接，从postUrl.openConnection()至此的配置必须要在connect之前完成,
+            // 要注意的是conn.getOutputStream会隐式的进行connect
+            conn.connect();
+ 
+            DataOutputStream out = new DataOutputStream(conn.getOutputStream());
+            String content = &quot;account=&quot; + name + &quot;&amp;age=&quot; + age; //Post参数, 用法和get类似
+            out.writeBytes(content); //提交
+            out.flush(); //关闭流
+            out.close();
+ 
+            if(connection.getResponseCode() == 200) //200代表成功, 见下面#3
+            reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            else reader = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+            String line;
+            while ((line = reader.readLine()) != null){
+                System.out.println(line);
+            }
+ 
+            //如果有更复杂的操作可以发送message, 如:
+            //Message m = new Message();
+            //handler.sendMessage(m);
+ 
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try{
+                if(reader != null) reader.close();
+                if(conn != null) conn.disconnect();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+ 
+    }
+}
+</code></pre>
+<h2 id="1-setdooutput与setdoinput的区别">1. <a href="https://blog.csdn.net/u010665691/article/details/45558119">setDoOutput与setDoInput的区别</a></h2>
+<h2 id="2-setrequestpropertybr">2. setRequestProperty<br></h2>
+<p>setRequestProperty一般用来设置通讯的头部信息，设置访问方式等。<br><br>
+也就是告诉服务器,你的客户端的配置/需求<br> <br></p>
+<p>比如说你要取某个文件的多少字节到多少字节就通过这个东西告诉服务器<br>
+<br>你的客户端支持压缩, 也可以告诉服务器, 服务器会压缩传输<br>
+<br>你的客户端支持什么编码, 也可以告诉服务器, 服务器会尽量按照你的编码传递数据<br><br>
+你的客户端是什么类型, IE、Firefox等等, 有的服务器会按照你的客户端类型给你传送文本<br> <br></p>
+<p>如果什么都不是, 服务器就会按缺省配置传递内容给你的客户端</p>
+<h2 id="3-常见http状态码">3. <a href="https://blog.csdn.net/luolinghong_csdn/article/details/78404409">常见HTTP状态码</a></h2>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://ArsenicX.github.io/CYr9O31-t" class="tag">
+                    Android
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ArsenicX.github.io/WcEfGlHKN">
+                  <h3 class="post-title">
+                    Android Exception总结
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

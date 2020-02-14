@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Android Exception总结 | ArsenicX</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1581681687290">
+<link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="layout: post
+title:  &quot;Android 自学杂记－异常&quot;
+date:   2018-08-17 23:52:36
+categories: Android
+comments: false
+
+
+
+活动Ac..." />
+    <meta name="keywords" content="Android" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://ArsenicX.github.io/">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1581681687290" class="site-logo">
+        <h1 class="site-title">ArsenicX</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/AhVo-DHVi/" class="site-nav">
+            Java
+          </a>
+        
+      
+        
+          <a href="/TYk3qS2vU" class="site-nav">
+            Git
+          </a>
+        
+      
+        
+          <a href="/CYr9O31-t/" class="site-nav">
+            android
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      <a href="https://github.com/ArsenicX" target="_blank">My Github</a>
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://ArsenicX.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Android Exception总结</h2>
+            <div class="post-date">2020-02-14</div>
+            
+            <div class="post-content" v-pre>
+              <p>layout: post</p>
+<p>title:  &quot;Android 自学杂记－异常&quot;</p>
+<p>date:   2018-08-17 23:52:36<br>
+categories: Android<br>
+comments: false</p>
+<hr>
+<ul>
+<li>
+<p>活动Activity死活不能全屏<br>
+<br> 可能是设置了android:theme=&quot;@style/Theme.AppCompat.Dialog&quot;</p>
+</li>
+<li>
+<p>Caused by: org.litepal.exceptions.InvalidAttributesException: dbname is empty or not defined in litepal.xml file<br>
+<br> assets 目录下的 litepal 忘了加后缀</p>
+</li>
+<li>
+<p>'android.view.Window$Callback android.view.Window.getCallback()' on a null object reference<br>
+<br> findViewById 不能在 setContentView(R.layout.activity_main) 的前面</p>
+</li>
+<li>
+<p>Recyclerview 子项间距差了一个 match_parent 距离<br>
+<br> Recyclerview 的 item 视图时，把 layout_height 写成 match_parent</p>
+</li>
+<li>
+<p>listview 滚动时顶部不能填充<br>
+<br> 添加配置android:clipToPadding=&quot;false&quot;<br>
+<br> 参考：<a href="https://blog.csdn.net/litefish/article/details/52471273">clipToPadding和clipChildren</a></p>
+</li>
+<li>
+<p>java.lang.NullPointerException: Attempt to get length of null array<br>
+<br> 添加读写SD卡的权限, 另外记得权限申请需要放在读写操作之前</p>
+</li>
+</ul>
+<pre><code class="language-java">&lt;uses-permission android:name=&quot;android.permission.MOUNT_UNMOUNT_FILESYSTEM&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;
+</code></pre>
+<ul>
+<li>'Receiver has no zero argument constructor'<br>
+<br> 出现环境: MainActivity中构造内部类MyBroadcastReceiver, 静态注册MyBroadcastReceiver, TestActivity调用sendBroadcast<br>
+<br> 解决方案:</li>
+</ul>
+<ol>
+<li>如果是静态广播注册方式 + 广播作为内部类来使用：广播内部类声明为static类型。</li>
+<li>如果是非静态广播注册方式：广播必须在类中注册（调用registerReceiver()方法）、注销（调用unregisterReceiver()方法）。</li>
+</ol>
+<ul>
+<li>编译不通过<br>
+<br> 添加其他仓库</li>
+</ul>
+<pre><code class="language-java">allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url &quot;https://maven.google.com&quot;
+        }
+        google()
+        mavenCentral() 
+        mavenLocal()
+    }
+}
+</code></pre>
+<ul>
+<li>Circular dependency between the following tasks</li>
+</ul>
+<pre><code class="language-java">编译错误提示: 
+Circular dependency between the following tasks:
+:app:checkManifestChangesDevelopDebug
+\--- :app:instantRunMainApkResourcesDevelopDebug
+     \--- :app:transformClassesAndDexWithShrinkResForDevelopDebug
+          \--- :app:transformDexArchiveWithDexMergerForDevelopDebug
+               +--- :app:preColdswapDevelopDebug
+               |    \--- :app:incrementalDevelopDebugTasks
+               |         +--- :app:transformClassesAndClassesEnhancedWithInstantReloadDexForDevelopDebug
+               |         |    \--- :app:transformClassesWithInstantRunForDevelopDebug
+               |         |         \--- :app:checkManifestChangesDevelopDebug (*)
+               |         \--- :app:transformClassesWithInstantRunForDevelopDebug (*)
+               \--- :app:transformClassesWithDexBuilderForDevelopDebug
+                    +--- :app:preColdswapDevelopDebug (*)
+                    \--- :app:transformClassesWithInstantRunForDevelopDebug (*)
+
+(*) - details omitted (listed previously)
+
+</code></pre>
+<p><br>  解决方法1: 把instant run关了</p>
+<p><br>  解决方法2: build.gradle (Module: app) 中 添加如下配置, 详见: Circular dependency between the following tasks</p>
+<pre><code class="language-java">buildTypes {
+        debug {
+            minifyEnabled true
+            useProguard true
+            shrinkResources true
+            ...
+            } 
+        ...
+    }
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://ArsenicX.github.io/CYr9O31-t" class="tag">
+                    Android
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ArsenicX.github.io/FN7wCWhMr">
+                  <h3 class="post-title">
+                    Android 总结
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

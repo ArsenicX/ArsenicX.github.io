@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>泛型 | ArsenicX</title>
+<title>BaseActivity &amp; MyApplication | ArsenicX</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,12 @@
 
 
 
-    <meta name="description" content="为什么需要泛型
-譬如我们需要一个数组类IntList，它存放int类型，并且有我们自定义的增加、删除、排序功能。
-后来我们发现只有一个int类型的数组不够，我们还需要一个有同样功能的数组类StringList，那么这时候就要再new一个cl..." />
-    <meta name="keywords" content="Java" />
+    <meta name="description" content="layout: post
+title:  &quot;BaseActivity &amp; MyApplication&quot;
+date:   2019-03-27 11:31:20
+categories: Android
+commen..." />
+    <meta name="keywords" content="Android" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,58 +94,129 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">泛型</h2>
+            <h2 class="post-title">BaseActivity &amp; MyApplication</h2>
             <div class="post-date">2020-02-14</div>
             
-              <div class="feature-container" style="background-image: url('https://ArsenicX.github.io//post-images/fan-xing.jpg')">
-              </div>
-            
             <div class="post-content" v-pre>
-              <h1 id="为什么需要泛型">为什么需要泛型</h1>
-<p>譬如我们需要一个数组类IntList，它存放int类型，并且有我们自定义的增加、删除、排序功能。<br>
-后来我们发现只有一个int类型的数组不够，我们还需要一个有同样功能的数组类StringList，那么这时候就要再new一个class文件，这就十分繁琐了<br>
-泛型就是解决这个问题的。它在定义时可以告诉编译器：我不把其中的参数类型写死，它可以是int、String等等，这个由我以后使用的时候决定</p>
-<h1 id="泛型怎么使用">泛型怎么使用</h1>
-<h2 id="在定义的时候">在定义的时候</h2>
-<p>如果当前的类有可能会需要用到多种数据类型，那这个时候就要在class上注明&lt;T&gt;。例如：</p>
-<pre><code class="language-java">public class MyList&lt;T&gt;{ 
-    //key这个成员变量的类型为T,T的类型由外部指定  
-    private T key;
+              <p>layout: post</p>
+<p>title:  &quot;BaseActivity &amp; MyApplication&quot;</p>
+<p>date:   2019-03-27 11:31:20<br>
+categories: Android<br>
+comments: false</p>
+<hr>
+<p><a href="https://juejin.im/post/5959b5bcf265da6c4d1bb245">GreenDao3.2 使用教程</a></p>
+<pre><code class="language-java">public class MyApplication extends Application {
 
-    public MyList(T key) { //泛型构造方法形参key的类型也为T，T的类型由外部指定
-        this.key = key;
+    private DaoSession daoSession;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        DaoMaster.DevOpenHelper helper = new  DaoMaster.DevOpenHelper(this, &quot;myDB.db&quot;);
+        Database db =  helper.getWritableDb();
+        daoSession = new DaoMaster(db).newSession();
     }
 
-    public T getKey(){ //泛型方法getKey的返回值类型为T，T的类型由外部指定
-        return key;
+    public DaoSession getDaoSession() {
+        return daoSession;
+
     }
 }
+
 </code></pre>
-<h2 id="在使用的时候">在使用的时候</h2>
-<ol>
-<li>创建泛型类对象：泛型写实际使用的参数<code>MyList&lt;String&gt; myList = new MyList&lt;String&gt;(&quot;字符串&quot;);</code></li>
-<li>使用泛型类对象作为参数：<br>
-如果能确定将接收到的泛型类的参数，就直接指定好：<code>public void showKeyValue(MyList&lt;String&gt; myList){...}</code><br>
-如果不确定，就写作&lt;?&gt;：<code>public void showKeyValue(MyList&lt;?&gt; myList){...}</code></li>
-</ol>
-<h1 id="上下界">上下界</h1>
-<ul>
-<li>extends和super都不能在泛型类<strong>定义</strong>时使用</li>
-<li>super只能在<strong>使用泛型类对象作为参数</strong>时使用，不能用于<strong>创建泛型类对象</strong>；extends无限制</li>
-</ul>
-<h1 id="限制">限制</h1>
-<p>详见：<a href="https://blog.csdn.net/hanchao5272/article/details/79352321">泛型使用的8个限制</a></p>
+<pre><code class="language-java">public class BaseActivity extends AppCompatActivity {
+
+    private static final String TAG = BaseActivity.class.getSimpleName();
+    //private static final String TAG = &quot;my&quot;;
+
+    /**
+     * [简化Toast]
+     * @param msg
+     */
+    public void showToast(String msg){
+        Toast.makeText(this,msg, Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * [简化Log]
+     * @param s
+     */
+    public void elog(String s) {
+        Log.e(TAG, s);
+    }
+
+    /**
+     * [简化Log]
+     * @param s
+     * @param e
+     */
+    public void eloge(String s,Exception e) {
+        Log.e(TAG, s, e);
+    }
+
+    /**
+     * [页面跳转]
+     * @param clz
+     */
+    public void startActivity(Class&lt;?&gt; clz) {
+        startActivity(new Intent(BaseActivity.this,clz));
+    }
+
+    /**
+     * [携带数据的页面跳转]
+     * @param clz
+     * @param bundle
+     */
+    public void startActivity(Class&lt;?&gt; clz, Bundle bundle) {
+        Intent intent = new Intent();
+        intent.setClass(this, clz);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivity(intent);
+    }
+
+    /**
+     * [含有Bundle通过Class打开编辑界面]
+     * @param cls
+     * @param bundle
+     * @param requestCode
+     */
+    public void startActivityForResult(Class&lt;?&gt; cls, Bundle bundle,
+                                       int requestCode) {
+        Intent intent = new Intent();
+        intent.setClass(this, cls);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
+        startActivityForResult(intent, requestCode);
+    }
+
+
+}
+
+
+</code></pre>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://ArsenicX.github.io/AhVo-DHVi" class="tag">
-                    Java
+                  <a href="https://ArsenicX.github.io/CYr9O31-t" class="tag">
+                    Android
                   </a>
                 
               </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ArsenicX.github.io/callback">
+                  <h3 class="post-title">
+                    callback
+                  </h3>
+                </a>
+              </div>
             
 
             
