@@ -2,13 +2,70 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ArsenicX.github.io/</id>
     <title>ArsenicX</title>
-    <updated>2020-02-18T07:44:34.581Z</updated>
+    <updated>2020-02-18T16:01:40.773Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ArsenicX.github.io/"/>
     <link rel="self" href="https://ArsenicX.github.io/atom.xml"/>
     <logo>https://ArsenicX.github.io/images/avatar.png</logo>
     <icon>https://ArsenicX.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ArsenicX</rights>
+    <entry>
+        <title type="html"><![CDATA[Java 总结]]></title>
+        <id>https://ArsenicX.github.io/java-zong-jie</id>
+        <link href="https://ArsenicX.github.io/java-zong-jie">
+        </link>
+        <updated>2020-02-18T15:02:00.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="入门">入门</h2>
+<ul>
+<li>成员变量不赋值就可以直接使用，int、byte等类型为0，boolean为fault，引用类型为null<br>局部变量必须先赋值，才能使用</li>
+<li>final：
+<ul>
+<li>修饰类--------表示其不能被继承，即最终类</li>
+<li>修饰方法-----表示其不能被重写，即最终方法</li>
+<li>修饰变量-----表示其不能被修改，即常量</li>
+</ul>
+</li>
+<li>abstract：
+<ul>
+<li>如果当前类有抽象方法，或继承自一个抽象类/抽象接口，但没有全部实现该类/该接口的抽象方法，则必须定义为抽象类<br>抽象类可以包含成员变量及构造方法，但不能被实例化，即不能new</li>
+<li>不能用来修饰成员变量和构造方法</li>
+<li>不能用private修饰，不能和static，final，native同时修饰同一方法</li>
+</ul>
+</li>
+<li><a href="https://blog.csdn.net/nvd11/article/details/18706087">Java 里的 abstract 和 final 关键字</a></li>
+</ul>
+<h2 id="进阶">进阶</h2>
+<ul>
+<li>
+<p>继承 &amp; 多态 &amp; 接口： <em>instanceof</em> 类来判断该引用型变量所指向的对象是否属于该类或该类的子类</p>
+<ol>
+<li>继承：<br>子类的修饰权限和父类必须要保持一致或更加公开<br>在构造子类对象的时候，会首先调用父类的无参构造方法；如果父类没有无参构造方法，则报错<br>如果要在子类的构造方法中明确写出调用基类方法super( )的话，则需要写在子类构造方法的<strong>第一行</strong></li>
+<li>多态：<br>子类方法的可访问性和父类必须要保持一致或更加公开<br>父类的私有方法不能被重写，即使子类中定义了一个同名的方法，也是一个新的方法，和父类方法无关<br>不能重写静态方法</li>
+<li>接口：<br>接口中定义的成员变量都是 static &amp; final<br>接口中定义的方法默认是、也只能是public类型；同时也只能是抽象方法（abstract，不能有方法体）、默认方法（必须用default修饰）或类方法（static）</li>
+</ol>
+</li>
+<li>
+<p>异常：</p>
+<ol>
+<li>
+<p>Try  Catch：<br>
+用竖线使一个try catch捕获多个异常，但是这种方式捕捉到的异常不能重新赋值，只能是e</p>
+<pre><code>try{...}
+catch(NumberFormatException  | ArithmeeticException e) {...}
+</code></pre>
+<p>即使catch中有return，代码也会执行finally中的语句，除非catch中有System.exit( )（退出应用程序）<br>执行内部的try如果没有遇到匹配的catch块，则检查外部的catch块</p>
+</li>
+<li>
+<p>Throw/ Throws：<br>throw用于try语句中，在可能出现异常的语句中 throw new Exception(&quot;... ...&quot;)<br>throws用于方法外部，如果自定义的方法可能会抛出异常，则方法名外加上 throws IOException,Exception....，然后在调用该方法的地方使用catch捕获</p>
+</li>
+<li>
+<p>自定义异常：如果总是在运行时产生异常，且不易预测在什么时候发生异常，则定义为RuntimeException；否则定义为Exception</p>
+</li>
+</ol>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[我的收藏]]></title>
         <id>https://ArsenicX.github.io/wo-de-shou-cang</id>
@@ -1136,18 +1193,12 @@ A(代表要画弧)     
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Git]]></title>
-        <id>https://ArsenicX.github.io/Git</id>
-        <link href="https://ArsenicX.github.io/Git">
+        <title type="html"><![CDATA[Git Command]]></title>
+        <id>https://ArsenicX.github.io/Git Command</id>
+        <link href="https://ArsenicX.github.io/Git Command">
         </link>
         <updated>2020-02-14T05:44:49.000Z</updated>
-        <content type="html"><![CDATA[<p>layout: post</p>
-<p>title:  &quot;Git 常用命令&quot;</p>
-<p>date:   2018-08-17 16:33:03</p>
-<p>categories: git_Github<br>
-comments: false</p>
-<hr>
-<h2 id="分支-master-暂存区-stage-工作区-work-dict"><strong>分支: master   暂存区: stage    工作区: work dict</strong></h2>
+        <content type="html"><![CDATA[<h2 id="分支-master-暂存区-stage-工作区-work-dict"><strong>分支: master   暂存区: stage    工作区: work dict</strong></h2>
 <figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/04/08/5caabaf1cb2c6.jpg" alt="" loading="lazy"></figure>
 <br>
 <pre><code>pwd                       当前路径

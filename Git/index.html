@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1582011541784">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1582041697774">
 <link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
 
 
@@ -18,14 +18,7 @@
 
 
 
-    <meta name="description" content="layout: post
-title:  &quot;Git 常用命令&quot;
-date:   2018-08-17 16:33:03
-categories: git_Github
-comments: false
-
-分支: master..." />
-    <meta name="keywords" content="Git" />
+    <meta name="description" content="">
   </head>
   <body>
     <div id="app" class="main">
@@ -34,7 +27,7 @@ comments: false
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://ArsenicX.github.io/">
-        <img src="https://ArsenicX.github.io//images/avatar.png?v=1582011541784" class="site-logo">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1582041697774" class="site-logo">
         <h1 class="site-title">ArsenicX</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -50,13 +43,13 @@ comments: false
         
       
         
-          <a href="/AhVo-DHVi/" class="site-nav">
+          <a href="/java" class="site-nav">
             Java
           </a>
         
       
         
-          <a href="/TYk3qS2vU" class="site-nav">
+          <a href="/git" class="site-nav">
             Git
           </a>
         
@@ -95,111 +88,33 @@ comments: false
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">Git</h2>
-            <div class="post-date">2020-02-14</div>
-            
-              <div class="feature-container" style="background-image: url('https://ArsenicX.github.io//post-images/Git.jpg')">
-              </div>
-            
-            <div class="post-content" v-pre>
-              <p>layout: post</p>
-<p>title:  &quot;Git 常用命令&quot;</p>
-<p>date:   2018-08-17 16:33:03</p>
-<p>categories: git_Github<br>
-comments: false</p>
-<hr>
-<h2 id="分支-master-暂存区-stage-工作区-work-dict"><strong>分支: master   暂存区: stage    工作区: work dict</strong></h2>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2019/04/08/5caabaf1cb2c6.jpg" alt="" loading="lazy"></figure>
-<br>
-<pre><code>pwd                       当前路径
-ls -ah                    当前路径下的所有文件
-touch &lt;file&gt;              新建
-cat &lt;file&gt;                读取
-vi &lt;file&gt;                 linux方式读取 a表示输入 :wq表示保存并退出 :q表示直接退出
-git rm &lt;file&gt;             删除
-
-
-
-git status                更改过的文件 work dict和master的比较
-git diff (file)           具体显示更改内容 work dict和stage的比较,且只能查到修改过的文件,新建文件查不出来
-git diff --cached         具体显示更改内容 stage和master的比较
-
-
-
-git checkout -- &lt;file&gt;    撤销 work dict被stage覆盖
-git reset head &lt;file&gt;     撤销 stage的修改被撤销
-git reset --hard head^    撤销 work dict和stage被master几次前的历史内容覆盖几个^就代表几次之前
-                              X次前也可以用HEAD~X代替
-git reset --hard xxxx     撤销及还原撤销work,dict和stage被master中commit id为xxxx的历史内容覆盖
-
-
-
-git log (--pretty=oneline)    显示日志(简要版) 显示的是目前master中存在的历史版本的日志记录,已撤销的查不到
-git reflog                    显示日志 显示的是所有操作的日志记录,包括已撤销的
-git log --graph               线性图示显示日志
-git log xxxx -1               只看xxxxx的日志
-git log xxxx -1 -p            查看xxxx具体修改内容
-
-
-
-git branch                    当前分支
-git checkout -b &lt;T&gt;           新建分支并切换到新分支 等同于git branch &lt;T&gt; + git checkout &lt;T&gt;
-git merge &lt;T&gt;                 将当前分支指向T分支 也就是将T分支内容覆盖到当前分支
-git merge --abort             取消合并命令 用于合并失败后
-git log --graph               可查看分支合并图
-git branch -d &lt;T&gt;             删除分支T
-
-
-
-git stash                     用于代码临时贮存.如:突然接到命令要修改master代码,但手头分支还没完成不能commit
-git stash list                查看临时贮存列表
-git stash pop                 恢复并删除stash(等同于git stash apply (stash@{X}) + git stash drop)
-                                  X从list命令中查看
-                                  注意:新入栈的修改位居栈顶
-
-
-
-git tag                                  查看标签
-git tag &lt;tagname&gt; (xxxx)                 给当前分支(/xxxx分支)创建标签 和commit对应
-git show &lt;tagname&gt;                       查看tagname标签
-git push origin &lt;tagname&gt;/--tags         推送tagname标签/所有标签
-git tag -d &lt;tagname&gt;                     删除本地标签
-git push origin :refs/tags/&lt;tagname&gt;     删除远程标签
-
-
-
-git add -f &lt;file&gt;                        强制添加被ignore的文件
-git check-ignore -v &lt;file&gt;               查看与file有关的忽略配置
-git config (--global) alias.XX status    用git XX代替git status global代表仅当前项目有效(.git/config)
-                                             去掉global代表全局设置(cd 初始目录/.gitconfig)
-
-</code></pre>
-
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://ArsenicX.github.io/TYk3qS2vU" class="tag">
-                    Git
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://ArsenicX.github.io/fan-xing">
-                  <h3 class="post-title">
-                    泛型
-                  </h3>
+          <h2 class="current-tag">标签: Git</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://ArsenicX.github.io/Git Command">
+                  <h2 class="post-title">Git Command</h2>
                 </a>
+                <div class="post-date">
+                  2020-02-14
+                </div>
+                <div class="post-abstract">
+                  
+                </div>
               </div>
-            
+              
+                <a class="right" href="https://ArsenicX.github.io/Git Command">
+                  <div class="feature-container" style="background-image: url('https://ArsenicX.github.io//post-images/Git Command.jpg')">
+                  </div>
+                </a>
+              
+            </article>
+          
 
-            
-
-          </div>
+          <div class="pagination-container">
+  
+  
+</div>
 
         </div>
       </div>
