@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>我的收藏 | ArsenicX</title>
+<title>Data Structure | ArsenicX</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,14 @@
 
 
 
-    <meta name="description" content="layout: post
-title:  &quot;我的收藏&quot;
-date:   2019-03-26 10:06:38
-categories: Android
-comments: false
+    <meta name="description" content="小技巧
 
-Java 泛型 &lt;? sup..." />
-    <meta name="keywords" content="Android" />
+怎么获得1-100的随机数：系统自带的随机数函数会返回一个未知位数的随机数，可以把这个数对100取余
+
+总结：
+1.float和double
+scanf(&quot;%lf&quot;) printf(&quot;%f&quot;..." />
+    <meta name="keywords" content="others" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,40 +102,49 @@ Java 泛型 &lt;? sup..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">我的收藏</h2>
-            <div class="post-date">2020-02-14</div>
+            <h2 class="post-title">Data Structure</h2>
+            <div class="post-date">2020-03-25</div>
             
             <div class="post-content" v-pre>
-              <p>layout: post</p>
-<p>title:  &quot;我的收藏&quot;</p>
-<p>date:   2019-03-26 10:06:38<br>
-categories: Android<br>
-comments: false</p>
-<hr>
-<p><a href="https://www.zhihu.com/question/20400700/answer/117464182">Java 泛型 &lt;? super T&gt; 中 super 怎么 理解？与 extends 有何不同？ - 胖君的回答</a></p>
-<p>学习路线总结：https://mp.weixin.qq.com/s/y5SaYprZJqhUmWy8a9qkKQ</p>
-<p><br>Material Design - FloatingActionMenu：https://www.jianshu.com/p/6489d255b0a6<br>
-<br>技术文章汇总：https://mp.weixin.qq.com/s/CrriyKC8nUgpx6exH8X1dA<br>
-<br>Android内存泄露：https://www.jianshu.com/p/e719e0c397e5<br>
-<br>Android字体适配：https://www.jianshu.com/p/2fdc97ae74a8<br>
-<br>五大常用算法：https://blog.csdn.net/ling_wang/article/details/81560925</p>
-<h2 id="面试">面试</h2>
-<p><a href="https://blog.csdn.net/huangqili1314/article/details/72792682">17-18 Android面试题 </a><br><br>
-<a href="https://github.com/JsonChao/Awesome-Android-Interview">Android 面试知识点 </a><br><br>
-<a href="https://www.jianshu.com/p/c44d7a106302">入门Android的一点一滴</a><br><br>
-<a href="https://www.jianshu.com/p/0f72ac621f82">Android面试总结 (BAT等6家offer)</a><br></p>
-<p><a href="https://github.com/JsonChao/Awesome-Third-Library-Source-Analysis">流行框架解析 </a><br><br>
-<a href="https://www.ctolib.com/cheatsheets-Android-ch.html">常见流行框架</a><br><br>
-<a href="https://developer.android.google.cn/guide/components/fundamentals">Google Android开发文档</a><br><br>
-<a href="https://github.com/Blankj/AndroidStandardDevelop">开发规范</a><br></p>
-<p><a href="https://crossoverjie.top/JCSprout/#/">Java 核心知识库</a><br></p>
+              <h3 id="小技巧">小技巧</h3>
+<ul>
+<li>怎么获得1-100的随机数：系统自带的随机数函数会返回一个未知位数的随机数，可以把这个数对100取余</li>
+</ul>
+<h2 id="总结">总结：</h2>
+<p>1.<code>float</code>和<code>double</code><br>
+<code>scanf(&quot;%lf&quot;) printf(&quot;%f&quot;)</code> 注意一个是<code>lf</code>，一个是<code>f</code></p>
+<ol start="2">
+<li>
+<p>运算符优先级：单目 &gt; 算术(加减乘除) &gt; 关系(==、&gt;=...) &gt; 赋值<br>
+单目运算符，比如<code>a*-b</code>：表示的是先对b取相反数，然后再与a相乘。单目优先级最高<br>
+多个关系运算符中，==和!=最低。例如：<code>5&gt;3==6&gt;4</code>表示的是<code>(5&gt;3)==(6&gt;4)</code>，最后返回的是1</p>
+</li>
+<li>
+<p><code>switch-case</code><br>
+虽然样子和功能看上去类似<code>if else</code>嵌套<br>
+但是用debug断点就可以看到，<code>if else</code>是从第一条if开始，一个一个向下判断是否匹配，费时费力；而<code>switch-case</code>是直接跳到对应的<code>case</code>语句<br>
+这样带来的好处就是，<code>switch-case</code>的效率不会被候选匹配项的数量影响</p>
+</li>
+</ol>
+<blockquote>
+<p>常见用法：成绩评定级别（90分以上为A，80-89为B...）</p>
+<pre><code class="language-java">switch（score/10）{
+case 10:
+case 9: printf(&quot;A&quot;);
+...}
+</code></pre>
+</blockquote>
+<ol start="4">
+<li></li>
+<li></li>
+</ol>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://ArsenicX.github.io/android/" class="tag">
-                    Android
+                  <a href="https://ArsenicX.github.io/others/" class="tag">
+                    others
                   </a>
                 
               </div>
@@ -143,9 +152,9 @@ comments: false</p>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://ArsenicX.github.io/baseactivity-and-myapplication/">
+                <a href="https://ArsenicX.github.io/android-kai-fa-zhe-zhi-nan-xue-xi-bi-ji/">
                   <h3 class="post-title">
-                    BaseActivity &amp; MyApplication
+                    Android开发者指南 - 学习笔记
                   </h3>
                 </a>
               </div>

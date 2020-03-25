@@ -1,109 +1,114 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://ArsenicX.github.io/</id>
-    <title>ArsenicX</title>
-    <updated>2020-03-25T05:04:47.748Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://ArsenicX.github.io/"/>
-    <link rel="self" href="https://ArsenicX.github.io/atom.xml"/>
-    <logo>https://ArsenicX.github.io/images/avatar.png</logo>
-    <icon>https://ArsenicX.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, ArsenicX</rights>
-    <entry>
-        <title type="html"><![CDATA[Regular expression]]></title>
-        <id>https://ArsenicX.github.io/regular-expression/</id>
-        <link href="https://ArsenicX.github.io/regular-expression/">
-        </link>
-        <updated>2020-03-25T05:01:25.000Z</updated>
-        <content type="html"><![CDATA[<p>https://youtube.com/user/fengnz/videos</p>
-<p>元字符		<br>
-任意1个字符	.	<br>
-字母数字+下划线	\w	<br>
-数字	\d	<br>
-空白字符	\s	空格、tab、换行</p>
-<p>锚点		<br>
-边界	\b	用于单词<br>
-^	^Ha表示以Ha开头的句子。注意是句子，而不是词组<br>
-在[]中，<sup>表示非。[</sup>a-z]表示不是a-z的任意字符<br>
-$	Ha$表示以Ha结尾的句子。注意是句子，而不是词组</p>
-<p>重复		<br>
-出现0次或者一次	?	?前面的字符可以出现0次或者1次<br>
-出现0次或者多次	*	*前面的字符可以出现0次或者多次<br>
-出现一次或者多次	+	+前面的字符可以出现一次或者多次<br>
-出现a次到b次	{a,b}	{}前面的字符可以出现a次到b次</p>
-<p>贪婪模式	*	尽可能多地匹配相符内容<br>
-懒惰模式	*?	尽可能少地匹配相符内容<br>
-侵占模式	*+	尽可能多地匹配相符内容, 绝不留给其他部分使用</p>
-<p>组		<br>
-字符集	[]	注意：这是一个字符<br>
-[ab4.7*/f] 表示匹配“ab4.7*/f”中的任意一个<br>
-[A-z3-87] 中的“-”是范围，表示匹配从大写A到小写z或从3到87中的任何一个 （A=65，z=122，有大小顺序之分）<br>
-分组	()	M(a|b|ab) 表示匹配Ma、Mb和Mab<br>
-$1、$2...可以用来代替原文中匹配到的组<br>
-在()中加入“?:”，表示不设为分组，例：&quot;(?:a)(b)&quot; 此时$1就是&quot;b&quot;<br>
-前瞻	(?=)	检查全部字符串中是否包括所需字符<br>
-(?=a1).<em>b2: 表示先检查整段字符串中是否含有a1，如果含有，就</em>a1的位置*开始匹配剩下的东西（即&quot;.*b2&quot;）;若没有，则匹配失败</p>
-<p>替换		<br>
-自己	\0</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[杂]]></title>
-        <id>https://ArsenicX.github.io/other/</id>
-        <link href="https://ArsenicX.github.io/other/">
-        </link>
-        <updated>2020-03-25T05:00:42.000Z</updated>
-        <content type="html"><![CDATA[<p>五大常用算法：https://blog.csdn.net/ling_wang/article/details/81560925<br>
-在Mac上完全删除android studio初始配置文件：https://blog.csdn.net/qq_21996633/article/details/51079380</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Data Structure]]></title>
-        <id>https://ArsenicX.github.io/data-structure/</id>
-        <link href="https://ArsenicX.github.io/data-structure/">
-        </link>
-        <updated>2020-03-25T04:58:45.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="小技巧">小技巧</h3>
-<ul>
-<li>怎么获得1-100的随机数：系统自带的随机数函数会返回一个未知位数的随机数，可以把这个数对100取余</li>
-</ul>
-<h2 id="总结">总结：</h2>
-<p>1.<code>float</code>和<code>double</code><br>
-<code>scanf(&quot;%lf&quot;) printf(&quot;%f&quot;)</code> 注意一个是<code>lf</code>，一个是<code>f</code></p>
-<ol start="2">
-<li>
-<p>运算符优先级：单目 &gt; 算术(加减乘除) &gt; 关系(==、&gt;=...) &gt; 赋值<br>
-单目运算符，比如<code>a*-b</code>：表示的是先对b取相反数，然后再与a相乘。单目优先级最高<br>
-多个关系运算符中，==和!=最低。例如：<code>5&gt;3==6&gt;4</code>表示的是<code>(5&gt;3)==(6&gt;4)</code>，最后返回的是1</p>
-</li>
-<li>
-<p><code>switch-case</code><br>
-虽然样子和功能看上去类似<code>if else</code>嵌套<br>
-但是用debug断点就可以看到，<code>if else</code>是从第一条if开始，一个一个向下判断是否匹配，费时费力；而<code>switch-case</code>是直接跳到对应的<code>case</code>语句<br>
-这样带来的好处就是，<code>switch-case</code>的效率不会被候选匹配项的数量影响</p>
-</li>
-</ol>
-<blockquote>
-<p>常见用法：成绩评定级别（90分以上为A，80-89为B...）</p>
-<pre><code class="language-java">switch（score/10）{
-case 10:
-case 9: printf(&quot;A&quot;);
-...}
-</code></pre>
-</blockquote>
-<ol start="4">
-<li></li>
-<li></li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Android开发者指南 - 学习笔记]]></title>
-        <id>https://ArsenicX.github.io/android-kai-fa-zhe-zhi-nan-xue-xi-bi-ji/</id>
-        <link href="https://ArsenicX.github.io/android-kai-fa-zhe-zhi-nan-xue-xi-bi-ji/">
-        </link>
-        <updated>2020-03-25T04:55:41.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="官网地址"><a href="https://developer.android.google.cn/guide">官网地址</a></h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Android开发者指南 - 学习笔记 | ArsenicX</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1585112596284">
+<link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="官网地址
+第一部分 App Basics：
+入门
+
+
+在Design标签下，点击Button图标，会出现一个Edit Baseline按钮（它将显示在设计编辑器中选定视图的正下方），它可以用来和其他组件居中对齐。如下图：
+
+
+Intent：..." />
+    <meta name="keywords" content="Android" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://ArsenicX.github.io/">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1585112596284" class="site-logo">
+        <h1 class="site-title">ArsenicX</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/java" class="site-nav">
+            Java
+          </a>
+        
+      
+        
+          <a href="/git" class="site-nav">
+            Git
+          </a>
+        
+      
+        
+          <a href="/android" class="site-nav">
+            android
+          </a>
+        
+      
+        
+          <a href="/others" class="site-nav">
+            Others
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+      <a href="https://github.com/ArsenicX" target="_blank">Github</a> | <a href="https://www.fotor.com.cn/app.html#/design" target="_blank">Fotor</a> | <a class="rss" href="https://ArsenicX.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Android开发者指南 - 学习笔记</h2>
+            <div class="post-date">2020-03-25</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="官网地址"><a href="https://developer.android.google.cn/guide">官网地址</a></h1>
 <h1 id="第一部分-app-basics">第一部分 App Basics：</h1>
 <h1 id="入门">入门</h1>
 <ul>
@@ -682,278 +687,59 @@ if (!pm.hasSystemFeature(PackageManager.FEATURE_SENSOR_COMPASS)) {
 <h1 id="chrome-os-devices"><a href="https://developer.android.google.cn/chrome-os/intro">Chrome OS Devices</a></h1>
 <h1 id="核心内容-eng-日后填坑"><a href="https://developer.android.google.cn/guide/components/activities/intro-activities">核心内容 Eng 日后填坑</a></h1>
 <h1 id="完美测试-eng-日后填坑"><a href="https://developer.android.google.cn/training/testing">完美测试 Eng 日后填坑</a></h1>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Github Page + jekyll搭建]]></title>
-        <id>https://ArsenicX.github.io/github-page-jekyll-da-jian/</id>
-        <link href="https://ArsenicX.github.io/github-page-jekyll-da-jian/">
-        </link>
-        <updated>2020-03-25T04:54:02.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="一-创建repository并pull到本地">一. 创建repository并pull到本地</h2>
-<ol>
-<li>这里需要注意Repository name一定要是自己的<code>Github账户名.github.io</code><img src="https://i.loli.net/2019/04/08/5caab7b46ea47.jpg" alt="Snipaste_2019-04-08_10-53-21.jpg" loading="lazy"></li>
-<li>创建好了之后在设置页面添加一个默认的界面样式<br>这步是为了在你以后添加博文的时候会有个初始界面，否则你的新博文是不会显示的<br><img src="https://i.loli.net/2019/04/08/5caab883d88a9.jpg" alt="Snipaste_2019-04-08_10-56-54.jpg" loading="lazy"></li>
-<li>将这个新建的项目pull到本地，并将该文件夹下除了<code>.git</code>之外其他文件全部删除（pull项目的具体操作可以看<a href="https://arsenicx.github.io/2018/08/17/git-commands/">Git 常用命令</a>）</li>
-</ol>
-<h2 id="二-创建自己的主页">二. 创建自己的主页</h2>
-<blockquote>
-<p>目前两大主流静态博客框架是jekyll和hexo，这里我选用了jekyll</p>
-</blockquote>
-<ol>
-<li>在<a href="http://jekyllthemes.org/">Jekyll Themes</a>中下载一个自己中意的主题（比如<a href="http://jekyllthemes.org/themes/wiki-blog/">Wiki Blog</a>，以下的配置也是基于Wiki Blog的），将下载后的压缩包解压，并将其中所有东西移动到repository目录中。<br>此时在浏览器打开<code>https://arsenicx.github.io/</code>就能看到自己的主页了（记得把链接里面的名称换成自己的）</li>
-<li>这时你的个人博客就搭建好了，repository目录下面的_posts文件夹就是你的博文放置的位置。<br>这时就可以用markdown格式来写你的第一篇博文了。</li>
-</ol>
-<h2 id="三-写自己的第一篇博文">三. 写自己的第一篇博文</h2>
-<blockquote>
-<p>有些主题可能强制要求在文章头必须写layout、title、date、categories等</p>
-</blockquote>
-<ol>
-<li>正文的格式是markdown格式文本。</li>
-<li>在本地修改完repository之后，用git命令提交到Github就可以了，然后过几分钟刷新自己博客的页面就可以看到改动了。</li>
-<li>以下是我遇到的一些小问题，一并贴在这里</li>
-</ol>
-<ul>
-<li>有些主题需要在开头之后至少空两行以上才能写正文</li>
-<li>如果添加了博文之后，怎么刷新都不出现，则有可能是你的博文日期设置问题。<br>因为jekyll是根据UTC时间设置的，而北京时间是UTC+8的时区，时间过早所以会出现博文不显示的bug，此时只要在博文开头的data后添加一个<code>UTC+8</code>即可，如<code>date:2019-04-08 10:42:03UTC+8</code></li>
-<li>当我把我的分类名<code>git_Github</code>改成<code>git&amp;Github</code>时，会发现在首页点击该分类无效了。个人怀疑是<code>&amp;</code>这个字符不能被支持，同样不支持的还有空格等字符。</li>
-<li>网站的自定义icon：将自己想要的图片缩放至32*32像素，然后重命名为<code>favicon.ico</code>并放到repository根目录下就好了。可能会需要很久才能实现预览，不必着急。</li>
-</ul>
-<h2 id="四-win环境搭建本地的jekyll环境选修">四. win环境搭建本地的jekyll环境（选修）</h2>
-<blockquote>
-<p>目的：<br>每次更改完_post之后都要先提交到Github，然后等一会才能看到实际效果。对于新手来说，更开始不熟悉Markdown效果肯定会更多的使用git push，费时间和精力。<br>而搭建本地的jekyll环境就可以在本地修改完项目后实时预览到变化，待最终确定完博文之后再提交到Github即可。</p>
-</blockquote>
-<ol>
-<li>首先安装Ruby，进入官网<a href="https://rubyinstaller.org/downloads/">下载页面</a>，下载“WITH DEVKIT”的版本。<br><img src="https://i.loli.net/2019/04/08/5caaedb34ea1f.jpg" alt="" loading="lazy"></li>
-<li>安装过程中，<strong>建议不要改变任何路径，使用默认就好</strong>，并且建议<strong>选中【加入到环境变量中】</strong><br>（因为我已经安装完成了，下图只做说明选项，不用在意版本号和其他）<br><img src="https://i.loli.net/2019/04/08/5caaedbabcb37.png" alt="" loading="lazy"></li>
-<li>安装完成之后会弹出一个命令行，是让你选择1，2，3来选择安装的，如果你不清楚区别的话按一下<code>Enter</code>回车就好，他会自动检测然后安装<br>（因为我已经安装完成了所以这里就不上图了）</li>
-<li>待安装后在命令提示符中分别运行<code>ruby -v</code>和<code>gem -v</code>，结果如果会出现当前安装版本号，则说明此时可以安装jekyll了。<br><img src="https://i.loli.net/2019/04/08/5caaeff7764db.jpg" alt="Snipaste_2019-04-08_14-52-18.jpg" loading="lazy"><br>运行<code>gem install jekyll</code>来安装jekyll<br><img src="https://i.loli.net/2019/04/08/5caaeff7bb8c9.jpg" alt="Snipaste_2019-04-08_14-52-42.jpg" loading="lazy"></li>
-<li>待安装后运行<code>jekyll --version</code>，出现版本号则说明安装成功。<br>然后将命令行路径移动到repository的目录下并运行<code>jekyll serve</code>，结果如下图的话，恭喜你，你已经搭建完成了本地的jekyll环境，其中红框所圈地址即为你的博客的本地路径，改动过repository后浏览器输入该地址并刷新即可实时预览<br><img src="https://i.loli.net/2019/04/08/5caaf215bb09f.jpg" alt="Snipaste_2019-04-08_15-02-33.jpg" loading="lazy"></li>
-</ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Git连接Github]]></title>
-        <id>https://ArsenicX.github.io/git-lian-jie-github/</id>
-        <link href="https://ArsenicX.github.io/git-lian-jie-github/">
-        </link>
-        <updated>2020-03-25T04:53:34.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="一-配置ssh">一. 配置SSH</h2>
-<ol>
-<li>
-<p>打开git，运行<code>ssh</code>。<br>如果打印以下消息，则说明ssh配置成功。<br><img src="https://i.loli.net/2019/04/07/5ca9e82a7cfd7.jpg" alt="" loading="lazy"><br>
-<br></p>
-</li>
-<li>
-<p>运行<code>ssh-keygen -t rsa</code>，用来生成和GitHub关联的key。<br>如果打印以下消息，则说明ssh key生成成功。其中红框部分是ssh key生成的位置。<br><img src="https://i.loli.net/2019/04/07/5ca9eb6958292.jpg" alt="" loading="lazy"><br>
-<br></p>
-</li>
-<li>
-<p>进入上图红框处ssh key的位置，并打开id_rsa.pub，复制其中的key文本。<br><img src="https://i.loli.net/2019/04/07/5ca9eb695f4bc.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>给自己的Github账户添加上一步复制的ssh key，如图操作或者直接<a href="https://github.com/settings/ssh/new">点击我</a>打开页面<br>
-<br><img src="https://i.loli.net/2019/04/07/5ca9eb69641d0.jpg" alt="" loading="lazy"></p>
-</li>
-<li>
-<p>git运行<code>ssh -T git@github.com</code>，第一次时会弹出警告，此时输入<code>YES</code>即可<br>
-<br>结果如下图则说明连接成功。<br><img src="https://i.loli.net/2019/04/07/5ca9ee4b32026.jpg" alt="Snipaste_2019-04-07_20-34-03.jpg" loading="lazy"></p>
-</li>
-</ol>
-<h2 id="二-连接github-repository">二. 连接Github repository</h2>
-<ol>
-<li>在github上添加新repository（如果已有可以跳过此步骤）<br>（具体步骤省略）</li>
-<li>将git命令行的当前路径移动到自己想要保存repository的目录<br>
-<br></li>
-<li>运行<code>git clone https://github.com/ArsenicX/ArsenicX.github.io.git</code>，<br>
-该地址位置如下图：<br>
-<img src="https://i.loli.net/2019/04/07/5ca9f095ae601.jpg" alt="" loading="lazy"></li>
-</ol>
-<br>
-参考：https://www.jianshu.com/p/5ad1ae0f7efd
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[String]]></title>
-        <id>https://ArsenicX.github.io/string/</id>
-        <link href="https://ArsenicX.github.io/string/">
-        </link>
-        <updated>2020-03-25T04:52:29.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>
-<p>与Char转换</p>
-</li>
-<li>
-<p>charAt()：类似于数组，取出特定位置字符 <code>char c = s.charAt(1);</code></p>
-</li>
-<li>
-<p>toCharArray()：将字符串转换为一个字符数组 <code>char[] arr = s.toCharArray();</code></p>
-</li>
-<li>
-<p>字符串逆置</p>
-</li>
-<li>
-<pre><code></code></pre>
-</li>
-</ul>
-<p>for(int i = 0;i&lt;s.length();i++){<br>
-System.out.print(s.charAt(s.length()-i-1));<br>
-}</p>
-<pre><code>- ```
-StringBuilder stringBuilder = new StringBuilder(str);
-StringBuilder str2 = stringBuilder.reverse();
-return str2.toString();
-</code></pre>
-<ul>
-<li>字符串排序</li>
-<li>
-<pre><code></code></pre>
-</li>
-</ul>
-<p>char array[]=s.toCharArray();<br>
-Arrays.sort(array);<br>
-for(char a:array){<br>
-System.out.println(a);<br>
-}</p>
-<pre><code></code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[集合]]></title>
-        <id>https://ArsenicX.github.io/ji-he/</id>
-        <link href="https://ArsenicX.github.io/ji-he/">
-        </link>
-        <updated>2020-03-25T04:52:04.000Z</updated>
-        <content type="html"><![CDATA[<p>Java的集合类主要由Collection和Map接口派生。</p>
-<h1 id="collection接口">Collection接口</h1>
-<p>Collection有3个子接口：List（顺序表）、Set（堆）、Queue（队列）</p>
-<h2 id="list">List</h2>
-<p>List常见的实现类是ArrayList、Vector和Stack（栈）<br>
-ArrayList是非线程安全的，在多线程下需要手动保证集合的同步性；而Vector是线程安全的<br>
-但是因为性能较差和有其他诸多缺点，在实际使用中仍然不推荐使用Vector。建议使用ArrayList并搭配Collections工具类保证线程安全</p>
-<h2 id="set">Set</h2>
-<p>Set常见的实现类是HashSet，还有TreeSet和EnumSet（专为枚举类设计）<br>
-HashSet的存储类似使用链地址法解决冲突的哈希表</p>
-<h2 id="迭代器iterator">迭代器：Iterator</h2>
-<p>Iterator接口是Collection的父接口，因此可以使用Collection.iterator()获取到Iterator，然后访问、操作数据</p>
-<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
-Iterator&lt;String&gt; iterator = list.iterator();
-while(iterator.hasNext()){
-    System.out.println(iterator.next())
-}
-</code></pre>
-<h2 id="集合工具类">集合工具类</h2>
-<p>Java还提供了两个较为实用的辅助工具类Collections和Arrays</p>
-<h1 id="map接口键值对">Map接口（键值对）</h1>
-<p>Map常见的实现类有HashMap和TreeMap</p>
-<pre><code>HashMap&lt;Integer,String&gt; hashMap = new HashMap&lt;&gt;();
-hashMap.put(1,&quot;aa&quot;);
-System.out.println(hashMap.get(1))
-</code></pre>
-<h1 id="集合转换">集合转换</h1>
-<p>将Map集合转换为Collection集合有3种方法：entrySet()、keySet()和values()，这三种方法分别返回键值对集合、键的集合和值的集合</p>
-<pre><code>HashMap&lt;Integer,String&gt; hashMap = new HashMap&lt;&gt;();
 
-//使用entrySet获取Entry键值对集合
-Set&lt;Entry&lt;Integer,String&gt;&gt; set = hashMap.entrySet();
-for(Entry&lt;Integer,String&gt; entry: set){
-    System.out.println(entry.getKey() + &quot; : &quot; + entry.getValue());
-}
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://ArsenicX.github.io/android/" class="tag">
+                    Android
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ArsenicX.github.io/github-page-jekyll-da-jian/">
+                  <h3 class="post-title">
+                    Github Page + jekyll搭建
+                  </h3>
+                </a>
+              </div>
+            
 
-//使用keySet获取键集合（使用values获取值集合类似）
-Set&lt;Integer&gt; set = hashMap.keyySet();
-for(Integer key: keySet){
-    System.out.println(key);
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java 总结]]></title>
-        <id>https://ArsenicX.github.io/java-zong-jie/</id>
-        <link href="https://ArsenicX.github.io/java-zong-jie/">
-        </link>
-        <updated>2020-02-18T15:02:00.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="入门">入门</h2>
-<ul>
-<li>成员变量不赋值就可以直接使用，int、byte等类型为0，boolean为fault，引用类型为null<br>局部变量必须先赋值，才能使用</li>
-<li>final：
-<ul>
-<li>修饰类--------表示其不能被继承，即最终类</li>
-<li>修饰方法-----表示其不能被重写，即最终方法</li>
-<li>修饰变量-----表示其不能被修改，即常量</li>
-</ul>
-</li>
-<li>abstract：
-<ul>
-<li>如果当前类有抽象方法，或继承自一个抽象类/抽象接口，但没有全部实现该类/该接口的抽象方法，则必须定义为抽象类<br>抽象类可以包含成员变量及构造方法，但不能被实例化，即不能new</li>
-<li>不能用来修饰成员变量和构造方法</li>
-<li>不能用private修饰，不能和static，final，native同时修饰同一方法</li>
-</ul>
-</li>
-<li><a href="https://blog.csdn.net/nvd11/article/details/18706087">Java 里的 abstract 和 final 关键字</a></li>
-</ul>
-<h2 id="进阶">进阶</h2>
-<ul>
-<li>
-<p>继承 &amp; 多态 &amp; 接口： <em>instanceof</em> 类来判断该引用型变量所指向的对象是否属于该类或该类的子类</p>
-<ol>
-<li>继承：<br>子类的修饰权限和父类必须要保持一致或更加公开<br>在构造子类对象的时候，会首先调用父类的无参构造方法；如果父类没有无参构造方法，则报错<br>如果要在子类的构造方法中明确写出调用基类方法super( )的话，则需要写在子类构造方法的<strong>第一行</strong></li>
-<li>多态：<br>子类方法的可访问性和父类必须要保持一致或更加公开<br>父类的私有方法不能被重写，即使子类中定义了一个同名的方法，也是一个新的方法，和父类方法无关<br>不能重写静态方法</li>
-<li>接口：<br>接口中定义的成员变量都是 static &amp; final<br>接口中定义的方法默认是、也只能是public类型；同时也只能是抽象方法（abstract，不能有方法体）、默认方法（必须用default修饰）或类方法（static）</li>
-</ol>
-</li>
-<li>
-<p>异常：</p>
-<ol>
-<li>
-<p>Try  Catch：<br>
-用竖线使一个try catch捕获多个异常，但是这种方式捕捉到的异常不能重新赋值，只能是e</p>
-<pre><code>try{...}
-catch(NumberFormatException  | ArithmeeticException e) {...}
-</code></pre>
-<p>即使catch中有return，代码也会执行finally中的语句，除非catch中有System.exit( )（退出应用程序）<br>执行内部的try如果没有遇到匹配的catch块，则检查外部的catch块</p>
-</li>
-<li>
-<p>Throw/ Throws：<br>throw用于try语句中，在可能出现异常的语句中 throw new Exception(&quot;... ...&quot;)<br>throws用于方法外部，如果自定义的方法可能会抛出异常，则方法名外加上 throws IOException,Exception....，然后在调用该方法的地方使用catch捕获</p>
-</li>
-<li>
-<p>自定义异常：如果总是在运行时产生异常，且不易预测在什么时候发生异常，则定义为RuntimeException；否则定义为Exception</p>
-</li>
-</ol>
-</li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[我的收藏]]></title>
-        <id>https://ArsenicX.github.io/wo-de-shou-cang/</id>
-        <link href="https://ArsenicX.github.io/wo-de-shou-cang/">
-        </link>
-        <updated>2020-02-14T12:01:14.000Z</updated>
-        <content type="html"><![CDATA[<p>layout: post</p>
-<p>title:  &quot;我的收藏&quot;</p>
-<p>date:   2019-03-26 10:06:38<br>
-categories: Android<br>
-comments: false</p>
-<hr>
-<p><a href="https://www.zhihu.com/question/20400700/answer/117464182">Java 泛型 &lt;? super T&gt; 中 super 怎么 理解？与 extends 有何不同？ - 胖君的回答</a></p>
-<p>学习路线总结：https://mp.weixin.qq.com/s/y5SaYprZJqhUmWy8a9qkKQ</p>
-<p><br>Material Design - FloatingActionMenu：https://www.jianshu.com/p/6489d255b0a6<br>
-<br>技术文章汇总：https://mp.weixin.qq.com/s/CrriyKC8nUgpx6exH8X1dA<br>
-<br>Android内存泄露：https://www.jianshu.com/p/e719e0c397e5<br>
-<br>Android字体适配：https://www.jianshu.com/p/2fdc97ae74a8<br>
-<br>五大常用算法：https://blog.csdn.net/ling_wang/article/details/81560925</p>
-<h2 id="面试">面试</h2>
-<p><a href="https://blog.csdn.net/huangqili1314/article/details/72792682">17-18 Android面试题 </a><br><br>
-<a href="https://github.com/JsonChao/Awesome-Android-Interview">Android 面试知识点 </a><br><br>
-<a href="https://www.jianshu.com/p/c44d7a106302">入门Android的一点一滴</a><br><br>
-<a href="https://www.jianshu.com/p/0f72ac621f82">Android面试总结 (BAT等6家offer)</a><br></p>
-<p><a href="https://github.com/JsonChao/Awesome-Third-Library-Source-Analysis">流行框架解析 </a><br><br>
-<a href="https://www.ctolib.com/cheatsheets-Android-ch.html">常见流行框架</a><br><br>
-<a href="https://developer.android.google.cn/guide/components/fundamentals">Google Android开发文档</a><br><br>
-<a href="https://github.com/Blankj/AndroidStandardDevelop">开发规范</a><br></p>
-<p><a href="https://crossoverjie.top/JCSprout/#/">Java 核心知识库</a><br></p>
-]]></content>
-    </entry>
-</feed>
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

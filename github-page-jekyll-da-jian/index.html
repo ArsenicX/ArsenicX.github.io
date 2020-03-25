@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Github Page + jekyll搭建 | ArsenicX</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1585112596284">
+<link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="一. 创建repository并pull到本地
+
+这里需要注意Repository name一定要是自己的Github账户名.github.io
+创建好了之后在设置页面添加一个默认的界面样式这步是为了在你以后添加博文的时候会有个初始界面，否..." />
+    <meta name="keywords" content="Git" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://ArsenicX.github.io/">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1585112596284" class="site-logo">
+        <h1 class="site-title">ArsenicX</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/java" class="site-nav">
+            Java
+          </a>
+        
+      
+        
+          <a href="/git" class="site-nav">
+            Git
+          </a>
+        
+      
+        
+          <a href="/android" class="site-nav">
+            android
+          </a>
+        
+      
+        
+          <a href="/others" class="site-nav">
+            Others
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+      <a href="https://github.com/ArsenicX" target="_blank">Github</a> | <a href="https://www.fotor.com.cn/app.html#/design" target="_blank">Fotor</a> | <a class="rss" href="https://ArsenicX.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Github Page + jekyll搭建</h2>
+            <div class="post-date">2020-03-25</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="一-创建repository并pull到本地">一. 创建repository并pull到本地</h2>
+<ol>
+<li>这里需要注意Repository name一定要是自己的<code>Github账户名.github.io</code><img src="https://i.loli.net/2019/04/08/5caab7b46ea47.jpg" alt="Snipaste_2019-04-08_10-53-21.jpg" loading="lazy"></li>
+<li>创建好了之后在设置页面添加一个默认的界面样式<br>这步是为了在你以后添加博文的时候会有个初始界面，否则你的新博文是不会显示的<br><img src="https://i.loli.net/2019/04/08/5caab883d88a9.jpg" alt="Snipaste_2019-04-08_10-56-54.jpg" loading="lazy"></li>
+<li>将这个新建的项目pull到本地，并将该文件夹下除了<code>.git</code>之外其他文件全部删除（pull项目的具体操作可以看<a href="https://arsenicx.github.io/2018/08/17/git-commands/">Git 常用命令</a>）</li>
+</ol>
+<h2 id="二-创建自己的主页">二. 创建自己的主页</h2>
+<blockquote>
+<p>目前两大主流静态博客框架是jekyll和hexo，这里我选用了jekyll</p>
+</blockquote>
+<ol>
+<li>在<a href="http://jekyllthemes.org/">Jekyll Themes</a>中下载一个自己中意的主题（比如<a href="http://jekyllthemes.org/themes/wiki-blog/">Wiki Blog</a>，以下的配置也是基于Wiki Blog的），将下载后的压缩包解压，并将其中所有东西移动到repository目录中。<br>此时在浏览器打开<code>https://arsenicx.github.io/</code>就能看到自己的主页了（记得把链接里面的名称换成自己的）</li>
+<li>这时你的个人博客就搭建好了，repository目录下面的_posts文件夹就是你的博文放置的位置。<br>这时就可以用markdown格式来写你的第一篇博文了。</li>
+</ol>
+<h2 id="三-写自己的第一篇博文">三. 写自己的第一篇博文</h2>
+<blockquote>
+<p>有些主题可能强制要求在文章头必须写layout、title、date、categories等</p>
+</blockquote>
+<ol>
+<li>正文的格式是markdown格式文本。</li>
+<li>在本地修改完repository之后，用git命令提交到Github就可以了，然后过几分钟刷新自己博客的页面就可以看到改动了。</li>
+<li>以下是我遇到的一些小问题，一并贴在这里</li>
+</ol>
+<ul>
+<li>有些主题需要在开头之后至少空两行以上才能写正文</li>
+<li>如果添加了博文之后，怎么刷新都不出现，则有可能是你的博文日期设置问题。<br>因为jekyll是根据UTC时间设置的，而北京时间是UTC+8的时区，时间过早所以会出现博文不显示的bug，此时只要在博文开头的data后添加一个<code>UTC+8</code>即可，如<code>date:2019-04-08 10:42:03UTC+8</code></li>
+<li>当我把我的分类名<code>git_Github</code>改成<code>git&amp;Github</code>时，会发现在首页点击该分类无效了。个人怀疑是<code>&amp;</code>这个字符不能被支持，同样不支持的还有空格等字符。</li>
+<li>网站的自定义icon：将自己想要的图片缩放至32*32像素，然后重命名为<code>favicon.ico</code>并放到repository根目录下就好了。可能会需要很久才能实现预览，不必着急。</li>
+</ul>
+<h2 id="四-win环境搭建本地的jekyll环境选修">四. win环境搭建本地的jekyll环境（选修）</h2>
+<blockquote>
+<p>目的：<br>每次更改完_post之后都要先提交到Github，然后等一会才能看到实际效果。对于新手来说，更开始不熟悉Markdown效果肯定会更多的使用git push，费时间和精力。<br>而搭建本地的jekyll环境就可以在本地修改完项目后实时预览到变化，待最终确定完博文之后再提交到Github即可。</p>
+</blockquote>
+<ol>
+<li>首先安装Ruby，进入官网<a href="https://rubyinstaller.org/downloads/">下载页面</a>，下载“WITH DEVKIT”的版本。<br><img src="https://i.loli.net/2019/04/08/5caaedb34ea1f.jpg" alt="" loading="lazy"></li>
+<li>安装过程中，<strong>建议不要改变任何路径，使用默认就好</strong>，并且建议<strong>选中【加入到环境变量中】</strong><br>（因为我已经安装完成了，下图只做说明选项，不用在意版本号和其他）<br><img src="https://i.loli.net/2019/04/08/5caaedbabcb37.png" alt="" loading="lazy"></li>
+<li>安装完成之后会弹出一个命令行，是让你选择1，2，3来选择安装的，如果你不清楚区别的话按一下<code>Enter</code>回车就好，他会自动检测然后安装<br>（因为我已经安装完成了所以这里就不上图了）</li>
+<li>待安装后在命令提示符中分别运行<code>ruby -v</code>和<code>gem -v</code>，结果如果会出现当前安装版本号，则说明此时可以安装jekyll了。<br><img src="https://i.loli.net/2019/04/08/5caaeff7764db.jpg" alt="Snipaste_2019-04-08_14-52-18.jpg" loading="lazy"><br>运行<code>gem install jekyll</code>来安装jekyll<br><img src="https://i.loli.net/2019/04/08/5caaeff7bb8c9.jpg" alt="Snipaste_2019-04-08_14-52-42.jpg" loading="lazy"></li>
+<li>待安装后运行<code>jekyll --version</code>，出现版本号则说明安装成功。<br>然后将命令行路径移动到repository的目录下并运行<code>jekyll serve</code>，结果如下图的话，恭喜你，你已经搭建完成了本地的jekyll环境，其中红框所圈地址即为你的博客的本地路径，改动过repository后浏览器输入该地址并刷新即可实时预览<br><img src="https://i.loli.net/2019/04/08/5caaf215bb09f.jpg" alt="Snipaste_2019-04-08_15-02-33.jpg" loading="lazy"></li>
+</ol>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://ArsenicX.github.io/git/" class="tag">
+                    Git
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ArsenicX.github.io/git-lian-jie-github/">
+                  <h3 class="post-title">
+                    Git连接Github
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>我的收藏 | ArsenicX</title>
+<title>Git连接Github | ArsenicX</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,15 @@
 
 
 
-    <meta name="description" content="layout: post
-title:  &quot;我的收藏&quot;
-date:   2019-03-26 10:06:38
-categories: Android
-comments: false
+    <meta name="description" content="一. 配置SSH
 
-Java 泛型 &lt;? sup..." />
-    <meta name="keywords" content="Android" />
+
+打开git，运行ssh。如果打印以下消息，则说明ssh配置成功。
+
+
+
+运行ssh-keygen -t rsa，用来生成和GitHub关联的key。如果打印以下消息，则说明ssh key生成成功。其中红框部分是ssh ..." />
+    <meta name="keywords" content="Git" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,40 +103,50 @@ Java 泛型 &lt;? sup..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">我的收藏</h2>
-            <div class="post-date">2020-02-14</div>
+            <h2 class="post-title">Git连接Github</h2>
+            <div class="post-date">2020-03-25</div>
             
             <div class="post-content" v-pre>
-              <p>layout: post</p>
-<p>title:  &quot;我的收藏&quot;</p>
-<p>date:   2019-03-26 10:06:38<br>
-categories: Android<br>
-comments: false</p>
-<hr>
-<p><a href="https://www.zhihu.com/question/20400700/answer/117464182">Java 泛型 &lt;? super T&gt; 中 super 怎么 理解？与 extends 有何不同？ - 胖君的回答</a></p>
-<p>学习路线总结：https://mp.weixin.qq.com/s/y5SaYprZJqhUmWy8a9qkKQ</p>
-<p><br>Material Design - FloatingActionMenu：https://www.jianshu.com/p/6489d255b0a6<br>
-<br>技术文章汇总：https://mp.weixin.qq.com/s/CrriyKC8nUgpx6exH8X1dA<br>
-<br>Android内存泄露：https://www.jianshu.com/p/e719e0c397e5<br>
-<br>Android字体适配：https://www.jianshu.com/p/2fdc97ae74a8<br>
-<br>五大常用算法：https://blog.csdn.net/ling_wang/article/details/81560925</p>
-<h2 id="面试">面试</h2>
-<p><a href="https://blog.csdn.net/huangqili1314/article/details/72792682">17-18 Android面试题 </a><br><br>
-<a href="https://github.com/JsonChao/Awesome-Android-Interview">Android 面试知识点 </a><br><br>
-<a href="https://www.jianshu.com/p/c44d7a106302">入门Android的一点一滴</a><br><br>
-<a href="https://www.jianshu.com/p/0f72ac621f82">Android面试总结 (BAT等6家offer)</a><br></p>
-<p><a href="https://github.com/JsonChao/Awesome-Third-Library-Source-Analysis">流行框架解析 </a><br><br>
-<a href="https://www.ctolib.com/cheatsheets-Android-ch.html">常见流行框架</a><br><br>
-<a href="https://developer.android.google.cn/guide/components/fundamentals">Google Android开发文档</a><br><br>
-<a href="https://github.com/Blankj/AndroidStandardDevelop">开发规范</a><br></p>
-<p><a href="https://crossoverjie.top/JCSprout/#/">Java 核心知识库</a><br></p>
+              <h2 id="一-配置ssh">一. 配置SSH</h2>
+<ol>
+<li>
+<p>打开git，运行<code>ssh</code>。<br>如果打印以下消息，则说明ssh配置成功。<br><img src="https://i.loli.net/2019/04/07/5ca9e82a7cfd7.jpg" alt="" loading="lazy"><br>
+<br></p>
+</li>
+<li>
+<p>运行<code>ssh-keygen -t rsa</code>，用来生成和GitHub关联的key。<br>如果打印以下消息，则说明ssh key生成成功。其中红框部分是ssh key生成的位置。<br><img src="https://i.loli.net/2019/04/07/5ca9eb6958292.jpg" alt="" loading="lazy"><br>
+<br></p>
+</li>
+<li>
+<p>进入上图红框处ssh key的位置，并打开id_rsa.pub，复制其中的key文本。<br><img src="https://i.loli.net/2019/04/07/5ca9eb695f4bc.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>给自己的Github账户添加上一步复制的ssh key，如图操作或者直接<a href="https://github.com/settings/ssh/new">点击我</a>打开页面<br>
+<br><img src="https://i.loli.net/2019/04/07/5ca9eb69641d0.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>git运行<code>ssh -T git@github.com</code>，第一次时会弹出警告，此时输入<code>YES</code>即可<br>
+<br>结果如下图则说明连接成功。<br><img src="https://i.loli.net/2019/04/07/5ca9ee4b32026.jpg" alt="Snipaste_2019-04-07_20-34-03.jpg" loading="lazy"></p>
+</li>
+</ol>
+<h2 id="二-连接github-repository">二. 连接Github repository</h2>
+<ol>
+<li>在github上添加新repository（如果已有可以跳过此步骤）<br>（具体步骤省略）</li>
+<li>将git命令行的当前路径移动到自己想要保存repository的目录<br>
+<br></li>
+<li>运行<code>git clone https://github.com/ArsenicX/ArsenicX.github.io.git</code>，<br>
+该地址位置如下图：<br>
+<img src="https://i.loli.net/2019/04/07/5ca9f095ae601.jpg" alt="" loading="lazy"></li>
+</ol>
+<br>
+参考：https://www.jianshu.com/p/5ad1ae0f7efd
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://ArsenicX.github.io/android/" class="tag">
-                    Android
+                  <a href="https://ArsenicX.github.io/git/" class="tag">
+                    Git
                   </a>
                 
               </div>
@@ -143,9 +154,9 @@ comments: false</p>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://ArsenicX.github.io/baseactivity-and-myapplication/">
+                <a href="https://ArsenicX.github.io/string/">
                   <h3 class="post-title">
-                    BaseActivity &amp; MyApplication
+                    String
                   </h3>
                 </a>
               </div>

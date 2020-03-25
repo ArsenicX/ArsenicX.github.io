@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Android 总结 | ArsenicX</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1585112596284">
+<link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="layout: post
+title:  &quot;Android 自学杂记&quot;
+date:   2018-08-17 23:52:36
+categories: Android
+comments: false
+
+component..." />
+    <meta name="keywords" content="Android" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://ArsenicX.github.io/">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1585112596284" class="site-logo">
+        <h1 class="site-title">ArsenicX</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/java" class="site-nav">
+            Java
+          </a>
+        
+      
+        
+          <a href="/git" class="site-nav">
+            Git
+          </a>
+        
+      
+        
+          <a href="/android" class="site-nav">
+            android
+          </a>
+        
+      
+        
+          <a href="/others" class="site-nav">
+            Others
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+      <a href="https://github.com/ArsenicX" target="_blank">Github</a> | <a href="https://www.fotor.com.cn/app.html#/design" target="_blank">Fotor</a> | <a class="rss" href="https://ArsenicX.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Android 总结</h2>
+            <div class="post-date">2020-02-14</div>
+            
+            <div class="post-content" v-pre>
+              <p>layout: post</p>
+<p>title:  &quot;Android 自学杂记&quot;</p>
+<p>date:   2018-08-17 23:52:36<br>
+categories: Android<br>
+comments: false</p>
+<hr>
+<h2 id="component">component：</h2>
+<ul>
+<li>
+<h3 id="edittext">EditText</h3>
+</li>
+</ul>
+<pre><code class="language-html">//去掉自带下划线
+android:background=&quot;@null&quot;
+
+//Hint字体效果
+android:textColor=&quot;#FFF&quot;
+android:textColorHint=&quot;#C2C2C2&quot;
+android:textCursorDrawable=&quot;@null&quot;
+
+//光标从右边/中间输入
+//因为gravity代表了光标的位置,所以就不能通过gravity来控制Hint在EditView中的位置了,只能用layout_marginTop曲线救国
+android:gravity=&quot;right/center&quot; 或者 editText.setGravity(Gravity.RIGHT/CENTER);
+</code></pre>
+<br>
+<ul>
+<li>
+<h3 id="textview">TextView</h3>
+</li>
+</ul>
+<pre><code class="language-html">//跑马灯效果
+android:singleLine=&quot;true&quot; 
+android:ellipsize=&quot;marquee&quot; 
+android:marqueeRepeatLimit=&quot;marquee_forever&quot;/&gt;
+
+textView.setSelected(true);
+</code></pre>
+<br>
+<ul>
+<li>
+<h3 id="自定义alertdialog">自定义AlertDialog</h3>
+</li>
+</ul>
+<pre><code class="language-html">LayoutInflater inflater = LayoutInflater.from(this);
+View v = inflater.inflate(R.layout.my_dialog, null);
+
+AlertDialog.Builder builder= new AlertDialog.Builder(this,R.style.MyDialogStyle);
+final Dialog dialog= builder.create();
+dialog.show();
+dialog.getWindow().setContentView(v); //自定义布局要在dialog.show()的后面
+//dialog.getWindow().setGravity(Gravity.CENTER); //可以设置显示的位置，默认居中
+
+
+Button btn= v.findViewById(R.id.btn);
+btn.setOnClickListener(...);
+</code></pre>
+<pre><code class="language-html">&lt;style name=&quot;MyDialogStyle&quot; parent=&quot;@android:style/Theme.Dialog&quot;&gt;
+        &lt;!--背景颜色和透明程度--&gt;
+        &lt;item name=&quot;android:windowBackground&quot;&gt;@android:color/transparent&lt;/item&gt;
+        &lt;!--是否浮现在activity之上--&gt;
+        &lt;item name=&quot;android:windowIsFloating&quot;&gt;true&lt;/item&gt;
+        &lt;!--是否去除边框--&gt;
+        &lt;item name=&quot;android:windowFrame&quot;&gt;@null&lt;/item&gt;
+        &lt;!--是否模糊--&gt;
+        &lt;item name=&quot;android:backgroundDimEnabled&quot;&gt;true&lt;/item&gt;
+        &lt;!--是否去除标题--&gt;
+        &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;
+
+        &lt;item name=&quot;android:windowIsTranslucent&quot;&gt;true&lt;/item&gt;
+        &lt;item name=&quot;android:windowContentOverlay&quot;&gt;@null&lt;/item&gt;
+&lt;/style&gt;
+</code></pre>
+<br>
+<ul>
+<li>
+<h3 id="scrollingtabsview-左右滑动切换标签界面">ScrollingTabsView : 左右滑动切换标签界面</h3>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<h3 id="navigationview">NavigationView :</h3>
+</li>
+</ul>
+<pre><code class="language-html">//修改menu默认选中子项
+nv.getMenu().getItem(0).setChecked(true);
+
+
+//修改menu子项颜色
+//新建res/color/selector_nv.xml, 注意一定要在color文件夹下
+//注意排序很关键，因为它们是按顺序被评估的，所以default才在最下面
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+
+    &lt;item android:state_checked=&quot;true&quot;
+          android:color=&quot;@color/colorAccent&quot;&gt;&lt;/item&gt; &lt;!-- selected颜色 --&gt;
+    
+    &lt;item android:state_pressed=&quot;true&quot;
+          android:color=&quot;@color/colorAccent&quot;/&gt; &lt;!-- pressed颜色 --&gt;
+    
+    &lt;item android:state_focused=&quot;true&quot;
+          android:color=&quot;@color/colorAccent&quot;/&gt; &lt;!-- focused颜色 --&gt;
+    
+    &lt;item android:color=&quot;@color/colorAccent&quot;/&gt; &lt;!-- default颜色 --&gt;
+
+&lt;/selector&gt;
+
+
+Resources resource = (Resources)getBaseContext().getResources();
+ColorStateList csl = resource.getColorStateList(R.color.selector_nv);
+nv.setItemTextColor(csl);
+</code></pre>
+<br>
+<ul>
+<li>
+<h3 id="searchview-更详细可以看-materialdesign之searchview全面解锁">SearchView : 更详细可以看 <a href="https://www.jianshu.com/p/7c1e78e91506">MaterialDesign之SearchView全面解锁</a></h3>
+</li>
+</ul>
+<pre><code class="language-java">//不自动弹出输入法
+sv.clearFocus();
+
+//searchView样式
+sv.onActionViewExpanded(); //区别不大, 不用多看
+
+Class&lt;?&gt; c = sv.getClass();
+    try {
+        Field f=c.getDeclaredField(&quot;mSearchPlate&quot;);//通过反射，获得类对象的一个属性对象
+        f.setAccessible(true);//设置此私有属性是可访问的
+        View v=(View) f.get(sv);//获得属性的值
+        v.setBackgroundResource(R.drawable.shape_color_grey);//设置此view的背景
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+        
+//搜索事件,返回值默认为false, 有操作则改成true
+sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+    //输入内容后,点击[搜索]才开始搜索
+    @Override
+    public boolean onQueryTextSubmit(String s) { return false; }
+            
+    //搜索框有内容后就自动搜索
+    @Override
+    public boolean onQueryTextChange(String s) {return false; }
+});
+</code></pre>
+<pre><code class="language-html">//内嵌在toolBar中的SearchView
+&lt;item
+    android:id=&quot;@+id/search&quot;
+    android:actionViewClass=&quot;android.widget.SearchView&quot;
+    android:showAsAction=&quot;ifRoom&quot; //ifRoom表示如果有空间就出现,还有always和never选项
+    android:title=&quot;搜索&quot;/&gt;
+</code></pre>
+<br>
+<h2 id="style">Style:</h2>
+<ul>
+<li>
+<h3 id="dp-px-dpi">dp / px / dpi</h3>
+<p>若一个屏幕分辨率是1920<em>1080<br>则该屏幕长为1920px，宽为1080px，对角线为√（1080</em> 1080+1920*1920）≈  2203px<br>如果屏幕尺寸为5寸，则dpi为2203px / 5 ≈ 441dpi<br>则屏幕长为1920/（441/160）= 697dp，宽为1080/（441/160）= 392dp</p>
+</li>
+</ul>
+<br>
+<ul>
+<li>
+<h3 id="dpi-ppi">dpi &amp; ppi：</h3>
+<p>每英寸容纳像素数量，即像素密度（android叫dpi，ios叫ppi（pixels per inch），一个意思）</p>
+</li>
+</ul>
+<blockquote>
+<p>iPhone(6~7) 宽为 2.3 英寸，高为 4.1 英寸，根据勾股定理得出这块屏幕的尺寸（屏幕对角线距离）是 4.7 英寸。iPhone(6~7) 屏幕宽（每行）有 750 个像素（发光点），高（每竖）有 1334 颗像素（发光点）。<br> <br>可以知道这台iPhone的分辨率为1334*750，像素密度为1334/4.1 = 750/2.3 ≈ 326ppi</p>
+</blockquote>
+<pre><code>&lt;br&gt;补充：&lt;br&gt; **脱离屏幕的大小讨论分辨率是没有意义的**
+</code></pre>
+<p>  现在有一只手机和一台电视，他们都是 1080P 分辨率，拥有 1920 x 1080 个总像素点。但是你觉得手机屏幕好像清楚的不得了，而电视屏幕凑近看全是类似马赛克的点。这是因为因为当屏幕尺寸被放大了，倘若分辨率不变，那么每一颗像素也必须得变大。于是就会造成这样的问题：一个像素点，在你的手机上只有一粒灰尘大小，而在电视上，可能大过一粒米。</p>
+<p>  所以光看屏幕的分辨率对于设计师来说是不具备多少实际意义的，通过分辨率计算得出的像素密度（PPI）才是设计师要关心的问题，我们通过屏幕分辨率和屏幕尺寸就能计算出屏幕的像素密度的。</p>
+<br>
+<ul>
+<li>
+<h3 id="textviewstyle">TextViewStyle</h3>
+</li>
+</ul>
+<pre><code class="language-html">// 项目中出现过个问题, 所有的text都是灰色, 然后用以下方法解决的
+
+在style里面添加:
+&lt;item name=&quot;android:textViewStyle&quot;&gt;@style/MyTextViewStyle&lt;/item&gt;
+
+&lt;style name=&quot;MyTextViewStyle&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;&gt;
+        &lt;!-- Customize your theme here. --&gt;
+        &lt;item name=&quot;android:textColor&quot;&gt;@color/colorBlack&lt;/item&gt;
+
+&lt;/style&gt;
+</code></pre>
+<br>
+<ul>
+<li>
+<h3 id="imageview">ImageView</h3>
+</li>
+</ul>
+<pre><code class="language-html">tint属性可以将图片整体换颜色，常用在同样形状但是不同颜色的btn上
+
+&lt;ImageView
+    android:src=&quot;@drawable/earth&quot; //注意必须是src配置，不能是background
+    android:tint=&quot;#F9F900&quot; //假设pic是地球🌍图片，使用tint之后会显示为黄色的圆🌕
+/&gt;
+</code></pre>
+<br>
+<ul>
+<li>
+<h3 id="actionbarsize">ActionBarSize</h3>
+</li>
+</ul>
+<pre><code class="language-html">定制ActionBar高度
+
+style.xml加入
+&lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.NoActionBar&quot;&gt;
+        ...
+        &lt;item name=&quot;@android:attr/actionBarSize&quot;&gt;40dp&lt;/item&gt;
+    &lt;/style&gt;
+
+注意: 需要miniSDKVersions&gt;11, 或者新建一个valuse-vXX/style.xml, XX&gt;11
+
+
+
+获取ActionBar高度
+TypedArray actionbarSizeTypedArray = 
+                context.obtainStyledAttributes(new int[] {android.R.attr.actionBarSize});
+float h = actionbarSizeTypedArray.getDimension(0, 0);
+</code></pre>
+<br>
+<ul>
+<li>
+<h3 id="color">Color</h3>
+</li>
+</ul>
+<pre><code class="language-html">values新建colors.xml
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;color name=&quot;colorPrimary&quot;&gt;#ae5da1&lt;/color&gt;
+&lt;/resources&gt;
+</code></pre>
+<pre><code class="language-html">引用方式: @color/colorButtonBlue
+常见透明度值: (0-&gt;100, 越来越看不见)
+0%=FF    5%=F2    10%=E5    15%=D8    20%=CC
+25%=BF    30%=B2    35%=A5    40%=99    45%=8c
+50%=7F    55%=72    60%=66    65%=59    70%=4c
+75%=3F    80%=33    85%=21    90%=19    95%=0c    100%=00
+
+使用方法:加到色值前, 如#FF222222,#59333333
+</code></pre>
+<br>
+<ul>
+<li>
+<h3 id="shape-自定义形状">Shape 自定义形状</h3>
+</li>
+</ul>
+<pre><code class="language-html">//外部配置
+&lt;shape 
+    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;rectangle | oval | line | ring //矩形、圆形、线、环形
+    android:useLevel=&quot;false&quot; //如果当做是LevelListDrawable使用时值为true，否则为false
+
+    //以下2个属性只有当类型为环形时才有效
+    android:innerRadius=&quot;10dp&quot; //内环半径
+    android:thickness=&quot;10dp&quot;&gt; //环的厚度
+
+    。。。
+
+&lt;/shape&gt;
+
+
+//内部配置
+    &lt;size android:height=&quot;100dp&quot;
+          android:width=&quot;100dp&quot;/&gt;
+
+    &lt;!-- 边框宽度及颜色 --&gt;
+    &lt;stroke android:width=&quot;1dp&quot;
+            android:color=&quot;#FFFFFF&quot;
+
+            //以下2个属性只有当类型为线形时才有效
+            android:dashGap=&quot;5dp&quot; //虚线间隔宽度
+            android:dashWidth=&quot;5dp&quot;/&gt; //虚线宽度
+    
+    &lt;!-- 填充颜色 --&gt;
+    &lt;solid android:color=&quot;@color/colorPrimary&quot;/&gt;
+
+    &lt;!-- 渐变色·垂直渐变：只能为45的倍数角度 --&gt;
+    &lt;gradient android:startColor=&quot;@android:color/white&quot;
+              android:endColor=&quot;@android:color/black&quot;
+              android:angle=&quot;0&quot;/&gt;
+    &lt;!-- 渐变色·中心渐变 --&gt;
+    &lt;gradient android:centerX=&quot;0.5&quot; //渐变中心的X轴坐标
+              android:centerY=&quot;0.5&quot; //渐变中心的Y轴坐标
+              android:type=&quot;sweep | radial&quot; //扫描性渐变、放射渐变（需要设置android:gradientRadius）
+              android:startColor=&quot;@android:color/white&quot;
+              android:endColor=&quot;@android:color/black&quot;/&gt;
+
+    &lt;padding android:bottom=&quot;10dp&quot;
+             android:left=&quot;10dp&quot;
+             android:right=&quot;10dp&quot;
+             android:top=&quot;10dp&quot;/&gt;
+    
+    //只用于矩形上设置圆角
+    &lt;!-- 设置四个角的弧度 --&gt;
+    &lt;corners android:radius=&quot;20dip&quot; /&gt;
+    &lt;!-- 或者分别设置四个角的弧度 --&gt;
+    &lt;corners
+        android:topLeftRadius=&quot;10dp&quot;
+        android:topRightRadius=&quot;20dp&quot;
+        android:bottomLeftRadius=&quot;50dp&quot;
+        android:bottomRightRadius=&quot;100dp&quot;/&gt;
+</code></pre>
+<br>
+<ul>
+<li>
+<h3 id="vector-svg-自定义圆形">Vector (SVG) 自定义圆形</h3>
+</li>
+</ul>
+<pre><code class="language-html">&lt;path
+    android:pathData=&quot;M24 24 A 10 10 0 1 0 24 23.99999&quot; //最后两值不能相同
+    android:strokeWidth=&quot;1&quot; //线宽
+    android:strokeColor=&quot;@color/colorAccent&quot; //线色
+    android:fillColor=&quot;@color/dialog_orange&quot;/&gt;  //填充色,不加属性默认为不填充
+ 
+
+参数含义:
+M 24 24 (起始点)
+    
+A(代表要画弧)      
+
+10 10 (x, y 轴半径)
+
+0 (x轴旋转角度, 没懂)
+
+1 (0/1-小/大弧度) : 给定一个起终点和半径, 能画出2种弧. 优弧(1)和劣弧(0)
+
+0 (0/1-逆/顺时针)
+
+24  23.999 (弧的起终点不能是同一点, 因为同一点之间无法构成线)
+</code></pre>
+<br>
+<br>
+<h2 id="四大组件">四大组件</h2>
+<ul>
+<li>
+<h3 id="自定义广播">自定义广播</h3>
+</li>
+</ul>
+<pre><code class="language-java">sendBroadcast(new Intent(getApplication(),MyBroadcastReceiver.class));
+
+//manifest添加
+&lt;receiver android:name=&quot;com.example.demo.MyBroadcastReceiver&quot;/&gt;
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://ArsenicX.github.io/android/" class="tag">
+                    Android
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ArsenicX.github.io/Git Command/">
+                  <h3 class="post-title">
+                    Git Command
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

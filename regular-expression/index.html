@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>我的收藏 | ArsenicX</title>
+<title>Regular expression | ArsenicX</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,16 @@
 
 
 
-    <meta name="description" content="layout: post
-title:  &quot;我的收藏&quot;
-date:   2019-03-26 10:06:38
-categories: Android
-comments: false
-
-Java 泛型 &lt;? sup..." />
-    <meta name="keywords" content="Android" />
+    <meta name="description" content="https://youtube.com/user/fengnz/videos
+元字符		
+任意1个字符	.	
+字母数字+下划线	\w	
+数字	\d	
+空白字符	\s	空格、tab、换行
+锚点		
+边界	\b	用于单词
+^	^Ha表示以Ha开..." />
+    <meta name="keywords" content="others" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,40 +104,47 @@ Java 泛型 &lt;? sup..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">我的收藏</h2>
-            <div class="post-date">2020-02-14</div>
+            <h2 class="post-title">Regular expression</h2>
+            <div class="post-date">2020-03-25</div>
             
             <div class="post-content" v-pre>
-              <p>layout: post</p>
-<p>title:  &quot;我的收藏&quot;</p>
-<p>date:   2019-03-26 10:06:38<br>
-categories: Android<br>
-comments: false</p>
-<hr>
-<p><a href="https://www.zhihu.com/question/20400700/answer/117464182">Java 泛型 &lt;? super T&gt; 中 super 怎么 理解？与 extends 有何不同？ - 胖君的回答</a></p>
-<p>学习路线总结：https://mp.weixin.qq.com/s/y5SaYprZJqhUmWy8a9qkKQ</p>
-<p><br>Material Design - FloatingActionMenu：https://www.jianshu.com/p/6489d255b0a6<br>
-<br>技术文章汇总：https://mp.weixin.qq.com/s/CrriyKC8nUgpx6exH8X1dA<br>
-<br>Android内存泄露：https://www.jianshu.com/p/e719e0c397e5<br>
-<br>Android字体适配：https://www.jianshu.com/p/2fdc97ae74a8<br>
-<br>五大常用算法：https://blog.csdn.net/ling_wang/article/details/81560925</p>
-<h2 id="面试">面试</h2>
-<p><a href="https://blog.csdn.net/huangqili1314/article/details/72792682">17-18 Android面试题 </a><br><br>
-<a href="https://github.com/JsonChao/Awesome-Android-Interview">Android 面试知识点 </a><br><br>
-<a href="https://www.jianshu.com/p/c44d7a106302">入门Android的一点一滴</a><br><br>
-<a href="https://www.jianshu.com/p/0f72ac621f82">Android面试总结 (BAT等6家offer)</a><br></p>
-<p><a href="https://github.com/JsonChao/Awesome-Third-Library-Source-Analysis">流行框架解析 </a><br><br>
-<a href="https://www.ctolib.com/cheatsheets-Android-ch.html">常见流行框架</a><br><br>
-<a href="https://developer.android.google.cn/guide/components/fundamentals">Google Android开发文档</a><br><br>
-<a href="https://github.com/Blankj/AndroidStandardDevelop">开发规范</a><br></p>
-<p><a href="https://crossoverjie.top/JCSprout/#/">Java 核心知识库</a><br></p>
+              <p>https://youtube.com/user/fengnz/videos</p>
+<p>元字符		<br>
+任意1个字符	.	<br>
+字母数字+下划线	\w	<br>
+数字	\d	<br>
+空白字符	\s	空格、tab、换行</p>
+<p>锚点		<br>
+边界	\b	用于单词<br>
+^	^Ha表示以Ha开头的句子。注意是句子，而不是词组<br>
+在[]中，<sup>表示非。[</sup>a-z]表示不是a-z的任意字符<br>
+$	Ha$表示以Ha结尾的句子。注意是句子，而不是词组</p>
+<p>重复		<br>
+出现0次或者一次	?	?前面的字符可以出现0次或者1次<br>
+出现0次或者多次	*	*前面的字符可以出现0次或者多次<br>
+出现一次或者多次	+	+前面的字符可以出现一次或者多次<br>
+出现a次到b次	{a,b}	{}前面的字符可以出现a次到b次</p>
+<p>贪婪模式	*	尽可能多地匹配相符内容<br>
+懒惰模式	*?	尽可能少地匹配相符内容<br>
+侵占模式	*+	尽可能多地匹配相符内容, 绝不留给其他部分使用</p>
+<p>组		<br>
+字符集	[]	注意：这是一个字符<br>
+[ab4.7*/f] 表示匹配“ab4.7*/f”中的任意一个<br>
+[A-z3-87] 中的“-”是范围，表示匹配从大写A到小写z或从3到87中的任何一个 （A=65，z=122，有大小顺序之分）<br>
+分组	()	M(a|b|ab) 表示匹配Ma、Mb和Mab<br>
+$1、$2...可以用来代替原文中匹配到的组<br>
+在()中加入“?:”，表示不设为分组，例：&quot;(?:a)(b)&quot; 此时$1就是&quot;b&quot;<br>
+前瞻	(?=)	检查全部字符串中是否包括所需字符<br>
+(?=a1).<em>b2: 表示先检查整段字符串中是否含有a1，如果含有，就</em>a1的位置*开始匹配剩下的东西（即&quot;.*b2&quot;）;若没有，则匹配失败</p>
+<p>替换		<br>
+自己	\0</p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://ArsenicX.github.io/android/" class="tag">
-                    Android
+                  <a href="https://ArsenicX.github.io/others/" class="tag">
+                    others
                   </a>
                 
               </div>
@@ -143,9 +152,9 @@ comments: false</p>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://ArsenicX.github.io/baseactivity-and-myapplication/">
+                <a href="https://ArsenicX.github.io/other/">
                   <h3 class="post-title">
-                    BaseActivity &amp; MyApplication
+                    杂
                   </h3>
                 </a>
               </div>

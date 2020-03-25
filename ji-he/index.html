@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>我的收藏 | ArsenicX</title>
+<title>集合 | ArsenicX</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,12 @@
 
 
 
-    <meta name="description" content="layout: post
-title:  &quot;我的收藏&quot;
-date:   2019-03-26 10:06:38
-categories: Android
-comments: false
-
-Java 泛型 &lt;? sup..." />
-    <meta name="keywords" content="Android" />
+    <meta name="description" content="Java的集合类主要由Collection和Map接口派生。
+Collection接口
+Collection有3个子接口：List（顺序表）、Set（堆）、Queue（队列）
+List
+List常见的实现类是ArrayList、Vector..." />
+    <meta name="keywords" content="Java" />
   </head>
   <body>
     <div id="app" class="main">
@@ -102,40 +100,59 @@ Java 泛型 &lt;? sup..." />
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">我的收藏</h2>
-            <div class="post-date">2020-02-14</div>
+            <h2 class="post-title">集合</h2>
+            <div class="post-date">2020-03-25</div>
             
             <div class="post-content" v-pre>
-              <p>layout: post</p>
-<p>title:  &quot;我的收藏&quot;</p>
-<p>date:   2019-03-26 10:06:38<br>
-categories: Android<br>
-comments: false</p>
-<hr>
-<p><a href="https://www.zhihu.com/question/20400700/answer/117464182">Java 泛型 &lt;? super T&gt; 中 super 怎么 理解？与 extends 有何不同？ - 胖君的回答</a></p>
-<p>学习路线总结：https://mp.weixin.qq.com/s/y5SaYprZJqhUmWy8a9qkKQ</p>
-<p><br>Material Design - FloatingActionMenu：https://www.jianshu.com/p/6489d255b0a6<br>
-<br>技术文章汇总：https://mp.weixin.qq.com/s/CrriyKC8nUgpx6exH8X1dA<br>
-<br>Android内存泄露：https://www.jianshu.com/p/e719e0c397e5<br>
-<br>Android字体适配：https://www.jianshu.com/p/2fdc97ae74a8<br>
-<br>五大常用算法：https://blog.csdn.net/ling_wang/article/details/81560925</p>
-<h2 id="面试">面试</h2>
-<p><a href="https://blog.csdn.net/huangqili1314/article/details/72792682">17-18 Android面试题 </a><br><br>
-<a href="https://github.com/JsonChao/Awesome-Android-Interview">Android 面试知识点 </a><br><br>
-<a href="https://www.jianshu.com/p/c44d7a106302">入门Android的一点一滴</a><br><br>
-<a href="https://www.jianshu.com/p/0f72ac621f82">Android面试总结 (BAT等6家offer)</a><br></p>
-<p><a href="https://github.com/JsonChao/Awesome-Third-Library-Source-Analysis">流行框架解析 </a><br><br>
-<a href="https://www.ctolib.com/cheatsheets-Android-ch.html">常见流行框架</a><br><br>
-<a href="https://developer.android.google.cn/guide/components/fundamentals">Google Android开发文档</a><br><br>
-<a href="https://github.com/Blankj/AndroidStandardDevelop">开发规范</a><br></p>
-<p><a href="https://crossoverjie.top/JCSprout/#/">Java 核心知识库</a><br></p>
+              <p>Java的集合类主要由Collection和Map接口派生。</p>
+<h1 id="collection接口">Collection接口</h1>
+<p>Collection有3个子接口：List（顺序表）、Set（堆）、Queue（队列）</p>
+<h2 id="list">List</h2>
+<p>List常见的实现类是ArrayList、Vector和Stack（栈）<br>
+ArrayList是非线程安全的，在多线程下需要手动保证集合的同步性；而Vector是线程安全的<br>
+但是因为性能较差和有其他诸多缺点，在实际使用中仍然不推荐使用Vector。建议使用ArrayList并搭配Collections工具类保证线程安全</p>
+<h2 id="set">Set</h2>
+<p>Set常见的实现类是HashSet，还有TreeSet和EnumSet（专为枚举类设计）<br>
+HashSet的存储类似使用链地址法解决冲突的哈希表</p>
+<h2 id="迭代器iterator">迭代器：Iterator</h2>
+<p>Iterator接口是Collection的父接口，因此可以使用Collection.iterator()获取到Iterator，然后访问、操作数据</p>
+<pre><code class="language-java">ArrayList&lt;String&gt; list = new ArrayList&lt;String&gt;();
+Iterator&lt;String&gt; iterator = list.iterator();
+while(iterator.hasNext()){
+    System.out.println(iterator.next())
+}
+</code></pre>
+<h2 id="集合工具类">集合工具类</h2>
+<p>Java还提供了两个较为实用的辅助工具类Collections和Arrays</p>
+<h1 id="map接口键值对">Map接口（键值对）</h1>
+<p>Map常见的实现类有HashMap和TreeMap</p>
+<pre><code>HashMap&lt;Integer,String&gt; hashMap = new HashMap&lt;&gt;();
+hashMap.put(1,&quot;aa&quot;);
+System.out.println(hashMap.get(1))
+</code></pre>
+<h1 id="集合转换">集合转换</h1>
+<p>将Map集合转换为Collection集合有3种方法：entrySet()、keySet()和values()，这三种方法分别返回键值对集合、键的集合和值的集合</p>
+<pre><code>HashMap&lt;Integer,String&gt; hashMap = new HashMap&lt;&gt;();
+
+//使用entrySet获取Entry键值对集合
+Set&lt;Entry&lt;Integer,String&gt;&gt; set = hashMap.entrySet();
+for(Entry&lt;Integer,String&gt; entry: set){
+    System.out.println(entry.getKey() + &quot; : &quot; + entry.getValue());
+}
+
+//使用keySet获取键集合（使用values获取值集合类似）
+Set&lt;Integer&gt; set = hashMap.keyySet();
+for(Integer key: keySet){
+    System.out.println(key);
+}
+</code></pre>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://ArsenicX.github.io/android/" class="tag">
-                    Android
+                  <a href="https://ArsenicX.github.io/java/" class="tag">
+                    Java
                   </a>
                 
               </div>
@@ -143,9 +160,9 @@ comments: false</p>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://ArsenicX.github.io/baseactivity-and-myapplication/">
+                <a href="https://ArsenicX.github.io/java-zong-jie/">
                   <h3 class="post-title">
-                    BaseActivity &amp; MyApplication
+                    Java 总结
                   </h3>
                 </a>
               </div>
