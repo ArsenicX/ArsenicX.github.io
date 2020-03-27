@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ArsenicX.github.io/</id>
     <title>ArsenicX</title>
-    <updated>2020-03-27T03:01:18.495Z</updated>
+    <updated>2020-03-27T03:04:04.588Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ArsenicX.github.io/"/>
     <link rel="self" href="https://ArsenicX.github.io/atom.xml"/>
@@ -87,8 +87,7 @@ ADSL账号密码，VLAN，交换机端口绑定Mac地址</li>
 <h3 id="2-5层协议数据传递图">2. 5层协议数据传递图</h3>
 <figure data-type="image" tabindex="1"><img src="https://github.com/ArsenicX/image-host/blob/master/%E6%89%B9%E6%B3%A8%202020-03-27%20102039.png?raw=true" alt="" loading="lazy"></figure>
 <h3 id="3-当今">3. 当今</h3>
-<p><img src="https://ArsenicX.github.io//post-images/1585278031861.png" alt="" loading="lazy"><br>
-现如今，技术的发展并不是遵循严格的 OSI 分层概念。实际上现在的互联网使用的 TCP/IP 体系结构有时已经演变成为下图所示那样<br>
+<p>现如今，技术的发展并不是遵循严格的 OSI 分层概念。实际上现在的互联网使用的 TCP/IP 体系结构有时已经演变成为下图所示那样<br>
 <img src="https://github.com/ArsenicX/image-host/blob/master/5183824-d30d533385a087d6.png?raw=true" alt="" loading="lazy"><br>
 <img src="https://github.com/ArsenicX/image-host/blob/master/5183824-e261fc9c3a2170ed.png?raw=true" alt="" loading="lazy"></p>
 ]]></content>
