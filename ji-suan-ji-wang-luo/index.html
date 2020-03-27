@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>计算机网络 | ArsenicX</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1585278045878">
+<link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="一.  概述
+一. 计算机网络的性能指标：
+
+
+速率（车速）
+在表示速度速率时，1M=106
+
+
+带宽（路宽）
+在表示带宽或者存储时，1M=220
+
+
+吞吐量：在单位时间内实际通过某个网络的数据量，单位是b/s, Mb/s。
+
+
+时延
+对于..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://ArsenicX.github.io/">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1585278045878" class="site-logo">
+        <h1 class="site-title">ArsenicX</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/java" class="site-nav">
+            Java
+          </a>
+        
+      
+        
+          <a href="/git" class="site-nav">
+            Git
+          </a>
+        
+      
+        
+          <a href="/android" class="site-nav">
+            Android
+          </a>
+        
+      
+        
+          <a href="/others" class="site-nav">
+            Others
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      
+    </div>
+    <div class="site-footer">
+      <a href="https://github.com/ArsenicX" target="_blank">Github</a> | <a href="https://www.fotor.com.cn/app.html#/design" target="_blank">Fotor</a> | <a class="rss" href="https://ArsenicX.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">计算机网络</h2>
+            <div class="post-date">2020-03-27</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="一-概述">一.  概述</h1>
+<h2 id="一-计算机网络的性能指标">一. 计算机网络的性能指标：</h2>
+<ol>
+<li>
+<p>速率（车速）<br>
+在表示速度速率时，1M=10<sup>6</sup></p>
+</li>
+<li>
+<p>带宽（路宽）<br>
+在表示带宽或者存储时，1M=2<sup>20</sup></p>
+</li>
+<li>
+<p>吞吐量：在单位时间内<strong>实际</strong>通过某个网络的数据量，单位是b/s, Mb/s。</p>
+</li>
+<li>
+<p>时延<br>
+对于高速网络链路，我们提高的仅仅是数据的<strong>发送速率</strong>而不是比特在链路上的<strong>传播速率</strong>。传播速率取决于通信线路的材料<br>
+通常我们所说的“光纤速度更快”，说的其实是光纤可以以更高的速度向光纤信道<strong>发送数据</strong>，而不是指信号在光纤中<strong>传播速度</strong>要比在铜线中快。实际上，光在光纤中的传播速度（20.5万公里/秒）确实要比电磁波在铜线中的传播速度（23.1万公里/秒）要低一些</p>
+</li>
+<li>
+<p>时延X带宽(时延带宽积)：有多少数据正在线路上。<br>
+<img src="https://github.com/ArsenicX/image-host/blob/master/%E6%89%B9%E6%B3%A8%202020-03-27%20094255.png?raw=true" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>利用率<br>
+要注意，信道利用率并非越高越好，根据排队论的理论，当某信道的利用率增大时，该信道引起的时延也就迅速增加；可以类比于公路上车辆越多，公路的利用率就越高，但是不可避免地就会造成堵车。<br>
+网络当前时延D = 网络空闲时的时延D<sub>0</sub> / (1 - 信道利用率U)<br>
+因此，对于一些较大的主干网的ISP，他们通常会将利用率控制在50%以下。</p>
+</li>
+</ol>
+<h2 id="二-通信协议">二. 通信协议：</h2>
+<h3 id="1-osi参考模型">1. OSI参考模型：</h3>
+<ul>
+<li>应用层——所有能产生网络流量的程序</li>
+<li>表示层——在传输之前是否进行加密 或 压缩 处理，二进制或ASCII码表示</li>
+<li>会话层——查木马，看需求端和网站之间的连接</li>
+<li>传输层——可靠传输，流量控制，不可靠传输(一个数据包即可，不需要建立会话，例如向DNS查询网站IP地址)</li>
+<li>网络层——负责选择最佳路径，规划IP地址(ipv4和ipv6变化只会影响网络层)</li>
+<li>数据链路层——帧的开始和结束，还有透明传输，差错校验(纠错由传输层解决)</li>
+<li>物理层——定义网络设备接口标准，电气标准(电压)，如何在物理链路上传输的更快</li>
+</ul>
+<ol>
+<li>
+<p>OSI参考模型对网络排错的意义：每一层都为上一层提供服务，一旦某一层崩了，上面所有层都崩了，所以排查问题从最底层(物理层)排查；</p>
+<ol>
+<li>物理层故障怎么办？<br>
+查看链接状态，发送和接收的数据包数值；</li>
+<li>数据链路层故障怎么办？<br>
+Mac地址冲突，2个一样的Mac地址同时访问；ADSL(非对称数字用户线路)欠费；两端的接口网速没有协商一致；计算机连接到其它VLAN(虚拟互联网)中。</li>
+<li>网络层故障怎么办？<br>
+配置错误的IP地址，子网掩码，网关；数据有没有通过各个网关到达指定位置；</li>
+<li>应用层(合并3层)故障怎么办？<br>
+应用程序配置问题</li>
+</ol>
+</li>
+<li>
+<p>OSI参考模型和网络安全解决办法：</p>
+<ol>
+<li>物理层安全隐患？<br>
+别人能私自接入你的网络，应该拔掉不用的网线或接口；</li>
+<li>数据链路层安全隐患？<br>
+ADSL账号密码，VLAN，交换机端口绑定Mac地址</li>
+<li>网络层安全隐患？<br>
+路由器上使用ACL(访问控制列表)控制数据包流量；防火墙设置；</li>
+<li>应用层安全隐患？<br>
+应用程序有没有漏洞</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-5层协议数据传递图">2. 5层协议数据传递图</h3>
+<figure data-type="image" tabindex="1"><img src="https://github.com/ArsenicX/image-host/blob/master/%E6%89%B9%E6%B3%A8%202020-03-27%20102039.png?raw=true" alt="" loading="lazy"></figure>
+<h3 id="3-当今">3. 当今</h3>
+<p><img src="https://ArsenicX.github.io//post-images/1585278031861.png" alt="" loading="lazy"><br>
+现如今，技术的发展并不是遵循严格的 OSI 分层概念。实际上现在的互联网使用的 TCP/IP 体系结构有时已经演变成为下图所示那样<br>
+<img src="https://github.com/ArsenicX/image-host/blob/master/5183824-d30d533385a087d6.png?raw=true" alt="" loading="lazy"><br>
+<img src="https://github.com/ArsenicX/image-host/blob/master/5183824-e261fc9c3a2170ed.png?raw=true" alt="" loading="lazy"></p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ArsenicX.github.io/regular-expression/">
+                  <h3 class="post-title">
+                    Regular expression
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
