@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ArsenicX.github.io/</id>
     <title>ArsenicX</title>
-    <updated>2020-03-27T03:19:52.719Z</updated>
+    <updated>2020-03-27T03:29:16.643Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ArsenicX.github.io/"/>
     <link rel="self" href="https://ArsenicX.github.io/atom.xml"/>
@@ -90,6 +90,20 @@ ADSL账号密码，VLAN，交换机端口绑定Mac地址</li>
 <p>现如今，技术的发展并不是遵循严格的 OSI 分层概念。实际上现在的互联网使用的 TCP/IP 体系结构有时已经演变成为下图所示那样<br>
 <img src="https://github.com/ArsenicX/image-host/blob/master/5183824-d30d533385a087d6.png?raw=true" alt="" loading="lazy"><br>
 <img src="https://github.com/ArsenicX/image-host/blob/master/5183824-e261fc9c3a2170ed.png?raw=true" alt="" loading="lazy"></p>
+<h1 id="二-物理层">二. 物理层</h1>
+<h2 id="一-基本概述">一. 基本概述</h2>
+<p>物理层的主要任务描述为确定与传输媒体的接口的一些特性，即：</p>
+<ul>
+<li>机械特性：指明接口所用接线器的形状和尺寸、引线数目和排列、固定和锁定装置等等。</li>
+<li>电气特性：指明在接口电缆的各条线上出现的电压的范围。</li>
+<li>功能特性：指明某条线上出现的某一电平的电压表示何种意义。</li>
+<li>过程特性：指明对于不同功能的各种可能事件的出现顺序。</li>
+</ul>
+<h2 id="二-数据通信基本">二. 数据通信基本</h2>
+<ol>
+<li>数据通信系统模型<br>
+<img src="https://ArsenicX.github.io//post-images/1585279750821.png" alt="" loading="lazy"></li>
+</ol>
 ]]></content>
     </entry>
     <entry>
