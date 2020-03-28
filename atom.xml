@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ArsenicX.github.io/</id>
     <title>ArsenicX</title>
-    <updated>2020-03-28T16:38:11.281Z</updated>
+    <updated>2020-03-28T16:39:49.652Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ArsenicX.github.io/"/>
     <link rel="self" href="https://ArsenicX.github.io/atom.xml"/>
@@ -374,6 +374,7 @@ HFC网是在目前覆盖面很广的有线电视网 CATV 的基础上开发的�
 <p>我们记单程 端到端的传播时延为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span>，可以得知，最迟要经过 2<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span> 才能知道自己发送的数据和其他站发送的数据有没有发生碰撞。<br>
 由此可见，每一个站在自己发送数据之后的一小段时间内，存在着遭遇碰撞的可能性。以太网的这一特点称为<strong>发送的不确定性</strong>。以太网的端到端往返时间 2<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span> 称为<strong>争用期(contention period)</strong>，又称为<strong>碰撞窗囗（collision window)</strong>。只有通过争用期的“考验”，即经过争用期这段时间还没有检测到碰撞，才能肯定这次发送不会发生碰撞。这时才可以放心把这一帧数据顺利发送完毕。</p>
 <p>而在发生碰撞之后呢？协议规定两个傻大个同时都不要再喊话了，冲突的站点都等一段时间之后再发数据。那等多久呢？<br>
+<img src="https://ArsenicX.github.io//post-images/1585413575106.png" alt="" loading="lazy"><br>
 <img src="https://ArsenicX.github.io//post-images/1585411897837.png" alt="" loading="lazy"></p>
 <p>目前为止，整个流程就是，若有两个人在喊话，喊得过程中他们发现还有其他人也在喊话（边发送边监听信道），那这时两个人就同时停下来，等随机时间之后再喊。</p>
 <p>那就又有个问题了，假如我喊的话很少，以至于我喊完了也没有听到别人在喊，所以我认为我的喊话已经完成，就不会重传发生冲突的帧了，这总咋办？<br>
