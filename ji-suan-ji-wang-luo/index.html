@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1585279754542">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1585413483768">
 <link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
 
 
@@ -18,7 +18,10 @@
 
 
 
-    <meta name="description" content="一.  概述
+    <meta name="description" content="
+笔记顺序及目录名称源自于《计算机网络 第七版》
+
+一.  概述
 一. 计算机网络的性能指标：
 
 
@@ -30,12 +33,8 @@
 在表示带宽或者存储时，1M=220
 
 
-吞吐量：在单位时间内实际通过某个网络的数据量，单位是b/s, Mb/s。
-
-
-时延
-对于..." />
-    <meta name="keywords" content="" />
+吞吐量：在单位时间内实际通过某个网络..." />
+    <meta name="keywords" content="others" />
   </head>
   <body>
     <div id="app" class="main">
@@ -44,7 +43,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://ArsenicX.github.io/">
-        <img src="https://ArsenicX.github.io//images/avatar.png?v=1585279754542" class="site-logo">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1585413483768" class="site-logo">
         <h1 class="site-title">ArsenicX</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -116,7 +115,10 @@
             <div class="post-date">2020-03-27</div>
             
             <div class="post-content" v-pre>
-              <h1 id="一-概述">一.  概述</h1>
+              <blockquote>
+<p>笔记顺序及目录名称源自于《计算机网络 第七版》</p>
+</blockquote>
+<h1 id="一-概述">一.  概述</h1>
 <h2 id="一-计算机网络的性能指标">一. 计算机网络的性能指标：</h2>
 <ol>
 <li>
@@ -137,7 +139,7 @@
 </li>
 <li>
 <p>时延X带宽(时延带宽积)：有多少数据正在线路上。<br>
-<img src="https://github.com/ArsenicX/image-host/blob/master/%E6%89%B9%E6%B3%A8%202020-03-27%20094255.png?raw=true" alt="" loading="lazy"></p>
+<img src="https://ArsenicX.github.io//post-images/1585280298420.png" alt="" loading="lazy"></p>
 </li>
 <li>
 <p>利用率<br>
@@ -146,7 +148,7 @@
 因此，对于一些较大的主干网的ISP，他们通常会将利用率控制在50%以下。</p>
 </li>
 </ol>
-<h2 id="二-通信协议">二. 通信协议：</h2>
+<h2 id="二-通信协议具体内容看之后各章">二. 通信协议（具体内容看之后各章）：</h2>
 <h3 id="1-osi参考模型">1. OSI参考模型：</h3>
 <ul>
 <li>应用层——所有能产生网络流量的程序</li>
@@ -186,11 +188,11 @@ ADSL账号密码，VLAN，交换机端口绑定Mac地址</li>
 </li>
 </ol>
 <h3 id="2-5层协议数据传递图">2. 5层协议数据传递图</h3>
-<figure data-type="image" tabindex="1"><img src="https://github.com/ArsenicX/image-host/blob/master/%E6%89%B9%E6%B3%A8%202020-03-27%20102039.png?raw=true" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://ArsenicX.github.io//post-images/1585280314002.png" alt="" loading="lazy"></figure>
 <h3 id="3-当今">3. 当今</h3>
 <p>现如今，技术的发展并不是遵循严格的 OSI 分层概念。实际上现在的互联网使用的 TCP/IP 体系结构有时已经演变成为下图所示那样<br>
-<img src="https://github.com/ArsenicX/image-host/blob/master/5183824-d30d533385a087d6.png?raw=true" alt="" loading="lazy"><br>
-<img src="https://github.com/ArsenicX/image-host/blob/master/5183824-e261fc9c3a2170ed.png?raw=true" alt="" loading="lazy"></p>
+<img src="https://ArsenicX.github.io//post-images/1585280321601.png" alt="" loading="lazy"><br>
+<img src="https://ArsenicX.github.io//post-images/1585280323758.png" alt="" loading="lazy"></p>
 <h1 id="二-物理层">二. 物理层</h1>
 <h2 id="一-基本概述">一. 基本概述</h2>
 <p>物理层的主要任务描述为确定与传输媒体的接口的一些特性，即：</p>
@@ -200,13 +202,314 @@ ADSL账号密码，VLAN，交换机端口绑定Mac地址</li>
 <li>功能特性：指明某条线上出现的某一电平的电压表示何种意义。</li>
 <li>过程特性：指明对于不同功能的各种可能事件的出现顺序。</li>
 </ul>
-<h2 id="二-数据通信基本">二. 数据通信基本</h2>
+<h2 id="二-数据通信的基本知识给非通信工程专业看的用于接轨后续学习">二. 数据通信的基本知识（给非通信工程专业看的，用于接轨后续学习）</h2>
 <ol>
-<li>数据通信系统模型<br>
-<img src="https://ArsenicX.github.io//post-images/1585279750821.png" alt="" loading="lazy"></li>
+<li>
+<p>数据通信系统模型<br>
+<img src="https://ArsenicX.github.io//post-images/1585279750821.png" alt="" loading="lazy"><br>
+在数字信号中有<code>码元</code>这一概念：<code>码元</code>就是在使用时间域的波形表示数字信号时，代表不同离散数值的基本波形。</p>
+<blockquote>
+<p>用人话讲，就是表示数字信号时，横轴的一个单位格就是一个码元。如图中，一个码元就代表一个0或者1<img src="https://ArsenicX.github.io//post-images/1585290057339.png" alt="" loading="lazy"></p>
+</blockquote>
+<p>一个码元所携带的信息量不是固定的，可以是1个，也可以是n个</p>
+<blockquote>
+<p>举例子：如果一个码元携带3个信息，则其携带的信息就有8种：从000到111<br>
+<img src="https://ArsenicX.github.io//post-images/1585290329066.png" alt="" loading="lazy"></p>
+</blockquote>
+</li>
+<li>
+<p>有关信道的基本概念<br>
+<code>信道</code>一般表示向<strong>一个方向</strong>传输信息的媒体。所以通信线路往往包含一条发送信息的信道和一条接收信息的信道。</p>
+<ul>
+<li>单向通信(单工通信)——只能有一个方向的通信，没有反向交互。比如电视机</li>
+<li>双向交替通信(半双工通信)——通信的双方都可以发送信息，但是不能双方同时发送或接收。比如对讲机，一方说完才能另一方说</li>
+<li>双向同时通信(全双工通信)——通信的双发可以同时发送和接收。比如电话</li>
+</ul>
+<p><code>基带信号</code>表示这些来自信源的信号，例如计算机输出的代表各种文字或图像文件的数据信号。基带信号往往包含了很多低频成分，然而这种低频成分并不能被许多信道传输，所以我们需要对基带信号进行<code>调制</code></p>
+<p><code>调制</code>分为了两大类，一类是仅仅对基带信号的波形进行变换，<strong>变换后仍然是基带信号</strong>。这类调制称为<code>基带调制</code>或<code>编码</code>。另一类调制需要使用载波（carrier）进行调制，把信号的频率范围搬移到较高的频段以便在信道中传输（即仅在一段频率范围内能够通过信道），<strong>变换后的信号称为<code>带通信号</code></strong>。这类使用载波进行的调制称为<code>带通调制</code></p>
+<p>常见的 <code>基带调制</code>/<code>编码</code>：<br>
+<img src="https://ArsenicX.github.io//post-images/1585289186730.png" alt="" loading="lazy"><br>
+基本的 <code>带通调制</code>：<br>
+<img src="https://ArsenicX.github.io//post-images/1585289426781.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>信道极限容量（简单举例讲解，具体学习去看通信专业相关书籍）<br>
+从概念上讲，限制码元在信道上传输速率的因素有2个：</p>
+<ol>
+<li>码间串扰：高频分量在传输时受到衰减，波形的前沿和后沿不再陡峭，每个码元的界限也不再明确的这种现象<img src="https://ArsenicX.github.io//post-images/1585296810369.png" alt="" loading="lazy"><br>
+奈氏准则：他给出了在理想条件下(无噪声/干扰/失真)，为了避免码间串扰，码元的传输速率的上限。超过了该上限，则会出现严重的码间串扰的问题<br>
+当然如果信道的频带很宽(信号高频分量很多)，则用更高的速率传输码元也不会出现码间串扰。</li>
+<li>信噪比(分贝)：信息的平均功率和噪声的平均功率之比，记为：S/N<br>
+噪声存在于所有电子设备中，无法避免。但是如果信噪比越高，则信息传输速率就越高<br>
+信噪比(dB) = 10 * log<sub>10</sub>(S/N)<br>
+香农公式：信道的<strong>极限</strong>信息传输速率C(bits/s) = 信道的带宽W * log<sub>2</sub>(1 + S/N)<br>
+由上式可得出，提高信息传输速率的方式有提高频带宽度、提高码元传输速率和<strong>让每一个码元携带更多的比特信息量</strong></li>
+<li>奈氏准则和香农公式的应用范围<br>
+<img src="https://ArsenicX.github.io//post-images/1585297117204.png" alt="" loading="lazy"></li>
+</ol>
+</li>
+</ol>
+<h2 id="三-物理层中的传输介质">三. 物理层中的传输介质</h2>
+<p>可分为两类：导向传输媒体 和 非导向传输媒体</p>
+<ol>
+<li>导向传输媒体：双绞线(屏蔽和无屏蔽)、同轴电缆、光缆(多模和单模)等</li>
+<li>非导向传输媒体：无线电、卫星、微波...</li>
+</ol>
+<p>水晶头直通线顺序：1橙白 2橙 3绿白 4蓝 5蓝白 6绿 7棕白 8棕 （此为568B标准）<br>
+直通线通常用于计算机连接集线器或交换机，若要连接另一台计算机，则要使用交叉线<br>
+交叉线顺序如图：（交叉线为568A标准）<img src="https://ArsenicX.github.io//post-images/1585299518930.png" alt="" loading="lazy"></p>
+<p>目前电信领域使用的电磁波频谱：<img src="https://ArsenicX.github.io//post-images/1585299588336.png" alt="" loading="lazy"></p>
+<h2 id="四-信道复用技术">四.  信道复用技术</h2>
+<p><img src="https://ArsenicX.github.io//post-images/1585302184765.png" alt="" loading="lazy"><br>
+<img src="https://ArsenicX.github.io//post-images/1585302415605.png" alt="" loading="lazy"></p>
+<p>分类：</p>
+<ol>
+<li>频分复用(FDM，frequency division multiplexing)：<br>
+用户在分配到一定的频带后，在通信过程中始终站用这个频带。</li>
+<li>时分复用(TDN，time division multiplexing)<br>
+时分复用是将时间划分为一段段等长的时分复用帧（TDM 帧）。每一个时分复用的用户在每一个 TDM 帧中占用固定序号的时隙。因此TDM 信号也称为等时(https://ArsenicX.github.io//post-images/1585303174149.png)</li>
+</ol>
+<pre><code>   当用户数量增多时：
+   在频分复用下，信道的总带宽也会增多：假如一个用户的带宽是4kHz，则100个用户频分复用后总带宽就变成了4MHz
+   在时分复用下，假设每个用户分配到的时隙宽度是125μs，则100个用户复用后每个用户的时隙宽度就变为了1.25μs
+</code></pre>
+<ol start="3">
+<li>
+<p>统计时分复用(STDM，statistic TDM)<br>
+上图的时分复用，是在理想状态下是所有用户都在进行数据传送的原理图。但是实际情况一定存在用户空闲状态，没有进行数据传输的时候，那么这个时候就会造成浪费<img src="https://ArsenicX.github.io//post-images/1585303266106.png" alt="" loading="lazy"><br>
+STDM应运而生，原理如下图。每一个STDM帧中的时隙数量都小于连接在集中器上的用户数量。在用户有数据后依次扫描缓存，没有数据的缓存就跳过；一个数据帧满了就发送。同时我们可以发现每个用户的出现并不是周期性的，所以STDM也称为<code>异步时分复用</code>，而普通的时分复用也称为<code>同步时分复用</code><img src="https://ArsenicX.github.io//post-images/1585303478581.png" alt="" loading="lazy"><br>
+但是我们仍然能看到缺点：</p>
+<ol>
+<li>首先因为用户不是周期性的出现了，所以在每个用户的数据上加装地址信息以供接收端能够识别该信息应该传送给谁，扩大了开销</li>
+<li>其次，倘若所有的用户都是不间断地向集中器发送数据，则STDM将无法应付，内部的缓存一定会溢出</li>
+</ol>
+</li>
+<li>
+<p>波分复用(WDM，wavelength division multiplexing)<br>
+实质就是光的频分复用。</p>
+</li>
+<li>
+<p>码分复用：没懂....</p>
+</li>
+</ol>
+<h2 id="五-数字传输系统">五. 数字传输系统</h2>
+<p>主要讲广域网数据传输。略</p>
+<h2 id="六-带宽接入技术">六. 带宽接入技术</h2>
+<p>带宽接入可以分为有线接入和无线接入，无线接入放在第9章<br>
+而有线接入又可以分为3种方式</p>
+<ol>
+<li>
+<p>非对称数字用户链路 ADSL<br>
+电话信号的频带在300-3400Hz之间，但是电话线可以通过的频率实际上却超过1MHz，因此可以使用电话线，把原来没有利用的高频谱段留给用户上网使用。<br>
+<img src="https://ArsenicX.github.io//post-images/1585315008062.png" alt="" loading="lazy"><br>
+因为通常用户在上网时都是下载居多，上传较少，因此ADSL的下行带宽要远大于上行，“非对称”这个名词就是这么来的</p>
+<p>采用方案：DMT技术。采用频分复用的方法，把40kHz以上一直到1.1MHz的高频谱划分为许多子信道，其中25个子信道用于上行信道，249个子信道用于下行信道(https://ArsenicX.github.io//post-images/1585360511678.png)</p>
+<p>原理：<img src="https://ArsenicX.github.io//post-images/1585355879750.png" alt="" loading="lazy"><br>
+以前，如图1，本地电话局一根线直接拉到家里面的电话机上<br>
+现在，如图2，ISP-区域宽带接一根线并入到电话线（用户线）上，然后送到居民家中，再被分给电话用和电脑用<br>
+但是怎么把网线并入电话线呢？然后又要怎么分离呢？这就需要<code>电话分离器</code>了，一个放在宽带和电话线合并的接口处用于网线的并入，另一个放在家中用于二者的分离<br>
+同时由于宽带需要调制解调（原因见2.2.2），这就需要<code>ADSL调制解调器</code>了，分别放在电话分离器之前和之后使用</p>
+<blockquote>
+<p>原文：<img src="https://ArsenicX.github.io//post-images/1585357505659.png" alt="" loading="lazy"></p>
+</blockquote>
+</li>
+<li>
+<p>光纤同轴混合网HFC (Hybrid Fiber Coax)：既然能走电话线上网，那就也能用电视线上网。<br>
+HFC网是在目前覆盖面很广的有线电视网 CATV 的基础上开发的一种居民宽带接入网。除了可传送电视节目外，还提供电话、数据和其他宽带交互型业务。</p>
+<p>方案：现有的 CATV 网是树形拓扑结构的同轴电缆网络，它采用模拟技术的频分复用对电视节目进行单向传输。而 HFC 网则需要对 CATV 网进行改造。</p>
+<p>原理：HFC 网将原 CATV 网中的同轴电缆主干部分改换为光纤，使用模拟光纤技术（在模拟光纤中采用光的振幅调制 AM，这比使用数字光纤更为经济）。模拟光纤从头端连接到光纤结点(https://ArsenicX.github.io//post-images/1585365602655.png)</p>
+<p>为了要使现有的模拟电视机能接收数字电视信号，还需要一个<code>机顶盒</code>连接在同轴电缆和电视机之间<br>
+为了用户能够利用HFC网接入到互联网以及在上行信道中传送交互数字电视所需的信息，还需要增加一个HFC 网的调制解调器，又称为<code>电缆调制解调器(cable modem)</code></p>
+<p>但是，由图可对比看出，ADSL方案中，用户计算机连接的电话线是用户独享的，因此传输的最高数据率是确定的；而HFC方案中一个光纤结点连接着通常是500户人家，如果大量用户同时上网，则每个用户的实际速率则会降低的非常严重</p>
+</li>
+<li>
+<p>FTTx技术<br>
+现阶段上网体验最好的，一定是光纤到户FTTH(Fiber To The Home)，即把光纤直接拉到自己家独享，进门之后光信号才转化为电信号。<br>
+但是这样势必使昂贵的，同时大多数用户也并不需要这么高的要求，因此便有了FTTx技术，而这个x是代表不同的光纤接入地点，比如FTTB（光纤到大楼，Building）、FTTC（光纤到路边，Curb） ...</p>
+<p>原理：<img src="https://ArsenicX.github.io//post-images/1585366175213.png" alt="" loading="lazy"></p>
+</li>
+</ol>
+<h1 id="三-数据链路层">三. 数据链路层</h1>
+<p>首先要明白，数据链路层不关心物理层解决的问题，只关心帧头帧尾和校验。我们甚至还可以更简单地设想<br>
+好像是沿者两个数据链路层之间的水平方向把帧直接发送到对方。<br>
+<img src="https://ArsenicX.github.io//post-images/1585366258503.png" alt="" loading="lazy"></p>
+<h2 id="一-使用点对点信道的数据链路层">一. 使用点对点信道的数据链路层</h2>
+<ol>
+<li>点对点信道的数据链路层在进行通信时的主要步骤如下：<br>
+(1) 结点A的数据链路层把网络层交下来的IP数据报添加首部和尾部封装成帧。<br>
+(2) 结点A把封装好的帧发送给结点B的数据链路层。<br>
+(3) 若结点B的数据链路层收到的帧无差错，则从收到的帧中提取出IP数据报交给上面的网络层：否则丢弃这个帧。<br>
+<img src="https://ArsenicX.github.io//post-images/1585373759040.png" alt="" loading="lazy"></li>
+<li>3个基本问题<br>
+数据链路层的协议有许多种，但是有3个问题是基本的：
+<ol>
+<li>封装成帧(framing)<br>
+在一段数据的前后分别添加首部和尾部，这样就构成了一个帧。接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，从收到的比特流中识别帧的开始和结束。<br>
+首部和尾部的一个重要作用就是进行帧定界（即确定帧的界限)。此外，首部和尾部还包括许多必要的控制信息。<br>
+显然，为了提高帧的传输效率，应当使帧的数据部分长度尽可能地大于首部和尾部的长度。但是，每一种链路层协议都规定了所能传送的帧的数据部分长度上限一一一最大传送单元MTU(https://ArsenicX.github.io//post-images/1585373784603.png)<br>
+其中控制字符SOH(StartOfHead)放在一帧的最前面，表示帧的首部开始。另一个控制字符(EndOfTransmission)表示帧的结束。<br>
+请注意，SOH和EOT都是控制字符的名称。它们的十六进制编码分别是01（二进制是00000001）和04（二进制是00000100)，并不是SOHEOT这六个字母。<br>
+<img src="https://ArsenicX.github.io//post-images/1585373814589.png" alt="" loading="lazy"><br>
+当数据在传输中出现差错时，帧定界符的作用更加明显。假定发送端在尚未发送完一个帧时突然出故障，中断了发送。但随后很快又恢复正常，于是重新从头开始发送刚才未发送完的帧。<br>
+由于使用了帧定界符，接收端就知道前面收到的数据是个不完整的帧〔只有首部廾始符SOH而没有传输结束符EOT),必须丢弃。而后面收到的数据有明确的帧定界符(SOH和EOT)，因此这是一个完整的帧，应当收下。</li>
+<li>透明传输<br>
+现在我们知道了开始符和结束符可以让就接收端识别一个完整的帧。但是，假如在数据中恰巧有一段数据就是00000100（EOT）呢？那这个时候就会被链路层错误的丢弃掉后面的数据。<br>
+<img src="https://ArsenicX.github.io//post-images/1585373997129.png" alt="" loading="lazy"><br>
+其解决方法就是使用转义字符“ESC”(其十六进制编码是 1B)，告诉接收端这个是数据，而不是标记符号<br>
+<img src="https://ArsenicX.github.io//post-images/1585374097492.png" alt="" loading="lazy"></li>
+<li>差错校验<br>
+由于信噪比等客观原因，数据传输中一定会出现差错，0/1变成了1/0，这种差错称为<code>比特差错</code>。而现在广泛使用的是<code>循环冗余检验 CRC</code>的检错技术<br>
+简单概括就是发送端生成<code>帧检验序列 FCS (Frame Check Sequence)</code>连接到原先的数据帧上，接收端接收到之后对【数据帧+FCS】作模2运算校验是否正确，从而决策是否接收。<br>
+<img src="https://ArsenicX.github.io//post-images/1585375296590.png" alt="" loading="lazy"><br>
+通过以上步骤可以近似认为：通过接收端数据链路层接受的<strong>帧</strong>均无差错<br>
+注意：上面提到的差错均是比特差错，即在一个帧数据中数字发生了变化，可以用CRC查错；并不包括<code>传输差错</code>（例如发送了5个帧，却只收到了其中3个），传输差错在第五章讲解<br>
+因此，通过了CRC，能实现无比特差错的传输，但是还不是可靠传输。</li>
+</ol>
+<blockquote>
+<p>传输差错：假定发送[#1]-[#2]-[#3]<br>
+帧丢失：收到[#1]-[#3]<br>
+帧失序：收到[#1]-[#3]-[#2]<br>
+帧重复：[#1]-[#2]-[#2]-[#3]</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="二-点对点协议-ppp">二. 点对点协议 PPP</h2>
+<p>对于点对点的链路来说，PPP协议是目前使用最广泛的</p>
+<ol>
+<li>
+<p>PPP的特点：（略写）</p>
+<ul>
+<li>被设计时应满足的需求：<br>
+简单；封装成帧；透明性；多种网络层协议；多种类型链路；差错检验；检测连接状态；最大传送单元；网络层地址协商；数据压缩协商</li>
+<li>PPP协议的组成部分：<br>
+一个将IP数据报封装到串行链路的方法；一个用来建立、配置和测试数据链路连接的链路控制协议LCP(LinkControl Protocol)、一套网络控制协议NCP(NetworkControlProtocol)</li>
+</ul>
+</li>
+<li>
+<p>PPP协议的格式<br>
+<img src="https://ArsenicX.github.io//post-images/1585380100279.png" alt="" loading="lazy"></p>
+<ul>
+<li>首部的第一个字段和尾部的第二个字段都是标志字段F(Flag)，7E的二进制为01111110，标志着一个帧的开始或者结束</li>
+<li>首部中的地址字段和控制字段，即图中的A和C，暂时还没有具体定义，即没有任何信息量</li>
+<li>首部的第四个字段是2字节的协议，不同的数有不同的含义。比如当协议字段为0x0021时PPP帧的信息字段为IP数据报；为0xC021时，信息字段是PPP链路控制协议LCPde数据</li>
+<li>信息部份的长度不超过1500字节</li>
+<li>尾部的第一个字段是使用CRC的帧检验序列FCS</li>
+</ul>
+<p>遇到数据字符和标志字符相同的情况下的解决方法：</p>
+<ul>
+<li>当PPP使用异步传输时，使用0x7D转义（字节填充法）：
+<ul>
+<li>将信息字段中出现的每一个 0x7E 字节转变成为 2 字节序列(0x7D, 0x5E)。</li>
+<li>若信息字段中出现一个 0x7D 的字节, 则将其转变成为 2 字节序列(0x7D, 0x5D)。</li>
+<li>若信息字段中出现 ASCII 码的控制字符（即数值小于 0x20 的字符），则在该字符前面要加入一个 0x7D 字节，同时将该字符的编码加以改变。</li>
+</ul>
+</li>
+<li>当PPP使用同步传输(一连串的比特发送)时，零比特填充法：
+<ul>
+<li>只要有连续的5个1，就填入一个0，使得确保不会出现6个0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>PPP协议的工作状态（没懂）：具体看书3.2.3</p>
+</li>
+</ol>
+<h2 id="三-广播信道这里的广播信道指的是同轴电缆或集线器并没有交换机">三. 广播信道（这里的广播信道，指的是同轴电缆或集线器，并没有交换机）</h2>
+<blockquote>
+<p>因为局域网使用的就是广播信道，而且目前局域网技术在计算机网络中占有重要的地位，所以我们着重学习局域网</p>
+</blockquote>
+<ol>
+<li>
+<p>局域网：<br>
+局域网可按网络拓扑分为<strong>星形网</strong>、<strong>环形网</strong>、<strong>总线网</strong>。总线网以<strong>传统以太网</strong>最为著名。后二的各站直接连在总线上。总线两端的匹配电阻吸收在总线上传播的电磁波信号的能量，避免在总线上产生有害的电磁波反射。<br>
+局域网可使用多种传输媒体。双绞线最便宜，已成为局域网中的主流传输媒体。当数据率很高时，往往需要使用光纤作为传输媒体。<br>
+<img src="https://ArsenicX.github.io//post-images/1585389989673.png" alt="" loading="lazy"><br>
+在共享信道中要着重考虑的一个问题就是如何使众多用户能够合理而方便地共享通信媒体资源。这在技术上有两种方法：</p>
+<ol>
+<li>静态划分信道，如在第2章的2·4节中己经介绍过的频分复用、时分复用、波分复用和码分复用等。用户只要分配到了信道就不会和其他用户发生冲突。但这种划分信道的方法代价较高，不适合于局域网使用。</li>
+<li>动态媒体接入控制，它又称为多点接入（multiple access)，其特点是信道并非在用户通信时固定分配给用户。这里又分为以下两类：
+<ul>
+<li>随机接入：随机接入的特点是所有的用户可随机地发送信息。但如果恰巧有两个或更多的用户在同一时刻发送信息，那么在共享媒体上就要产生碰撞（即发生了冲突),使得这些用户的发送都失败。因此，必须有解决碰撞的网络协议。</li>
+<li>受控接入：受控接入的特点是用户不能随机地发送信息而必须服从一定的控制。这类的典型代表有分散控制的令牌环局域网和集中控制的多点线路探询（polling），或称为轮询。</li>
+</ul>
+</li>
+</ol>
+<p>因为现在以太网几乎成为了局域网的同义词，同时由于<strong>受控接入</strong>目前在局域网中使用得较少<br>
+所以我们重点讨论属于随机接入的传统以太网（传统指的是最早流行的10Mbit/s速率的以太网）</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>以太网的两个标准：<br>
+以太网有DIX Ethernet V2和IEEE 802.3 两个标准，但是差别很小。<br>
+而后因为种种原因，标准委员会也没有统一标准，反而还被迫制定了好几种标准。但是为了不同的标准也能适配，委员会将数据链路层分为了2层：<code>逻辑链路控制LLC(Logical Link Control)</code>子层和<code>媒体接入控制MAC(Medium Access Control)</code>子层，其中，与接入到传输媒体有关的内容都放在MAC子层上，而LLC子层与传输媒体无关<br>
+<img src="https://ArsenicX.github.io//post-images/1585409955296.png" alt="" loading="lazy"><br>
+随着局域网市场的发展，DIX标准被越来越多的使用，IEEE已不再被使用。也正因如此，IEEE标准的LLC子层作用就不大了。现如今很多厂商生产适配器时都甚至不会再装LLC协议了</p>
+</li>
+<li>
+<p>适配器的作用：<br>
+适配器本来是在主机箱内插入的一块网络接口板（或者是在笔记本电脑中插入一块PCMCIA卡一一个人计算机存储器卡接口适配器）。这种接口板又称为网络接囗卡NIC(NetworkinterfaceCard)或简称为<code>网卡</code>。这种通信适配器上面装有处理器和存储器（包括RAM和ROM)。</p>
+<p>简单来讲，计算机与外界局域网的连接就是通过通信适配器（adapt）进行的。<br>
+适配器和局域网之间的通信是通过电缆或双绞线以<strong>串行传输</strong>方式进行的，而适配器和计算机之间的通信则是通过计算机主板上的I/O总线以<strong>并行传输</strong>方式进行的。因此，适配器的一个重要功能就是要进行数据串行传输和并行传输的转换。同时由于网络上的数据率和计算机总线上的数据率并不相同，因此在适配器中必须装有对数据进行缓存的存储芯片。在主板上插入适配器时，还必须把管理该适配器的设备驱动程序安装在计算机的操作系统中。这个驱动程序以后就会告诉适配器，应当从存储器的什么位置上把多长的数据块发送到局域网，或者应当在存储器的什么位置上把局域网传送过来的数据块存储下来。适配器还要能够实现以太网协议。</p>
+<p>注意，计算机的硬件地址就在适配器的ROM中，而计算机的软件地址一一IP地址则在计算机的存储器中。<br>
+<img src="https://ArsenicX.github.io//post-images/1585410048907.png" alt="" loading="lazy"></p>
+</li>
+</ul>
+<ol start="2">
+<li>
+<p>CSMA/CD 协议<br>
+为了通讯的便捷，以太网采用了两种措施：</p>
+<ol>
+<li>较为灵活的无连接的工作方式。即不必先建立连接就可以直接发送数据。适配器对发送的数据帧不进行编号，也不要求对方发回确认。即不可靠的交付。类似于傻大个，拿到信息就对外喊，自己喊的是什么也不管，别人听没听到也不管</li>
+<li>使用曼彻斯特(Manchester)编码。二进制基带数字信号通常就是高、低电压交替出现的信号，使用这种信号的最大问题就是出现一长串的连1或连0时，接收端就无法从收到的比特流中提取位同步（即比特同步）信号。而曼彻斯特编码的编码方法是把每一个码元再分成两个相等的间隔。码元1是前一个间隔为低电压面后一个间隔为高电压，码元0则正好相反，从高电压变到低电压（也可采用相反的约定，即1是“前高后低”而0是“前低后高“。这样就保证了在每一个码元的正中间出现一次电压的转换，而接收端就利用这种电压的转换很方便地把位同步信号提取出来。但是从曼彻斯特编码的波形图也不难看出其缺点，这就是它所占的频带宽度比原始的基带信号增加了一倍（区为每秒传送的码元数加倍了）</li>
+</ol>
+<p>关于第一点，这就有隐患了。如果同时两个傻大个喊了话，那准备接受的人就会听到两个声音，接收人就不能准确的提取出有效信息，那这怎么办呢？（注意这里仅仅考虑同时喊话导致第三人听不清楚的隐患，而不考虑喊错了话或者是喊漏了话，因为这些情况会被上层运输层发现，后续补救由他们负责）这时候就用到了 CSMA/CD 协议（载波监听多点接入/碰撞检测）</p>
+<p>CSMA/CD 协议要点：</p>
+<ul>
+<li>多点接入：表示许多计算机以多点接入的方式连接在一根总线上。（这个是废话）</li>
+<li>载波监听：是指每一个站在发送数据之前先要检测一下总线上是否有其他计算机在发送数据，如果有，则暂时不要发送数据，以免发生碰撞。</li>
+<li>碰撞检测：就是计算机边发送数据边检测信道上的信号电压大小。当几个站同时在总线上发送数据时，总线上的信号电压摆动值将会增大（互相叠加）。当一个站检测到的信号电压摆动值超过一定的门限值时，就认为总线上至少有两个站同时在发送数据，表明产生了碰撞。</li>
+</ul>
+<p>我们记单程 端到端的传播时延为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span>，可以得知，最迟要经过 2<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span> 才能知道自己发送的数据和其他站发送的数据有没有发生碰撞。<br>
+由此可见，每一个站在自己发送数据之后的一小段时间内，存在着遭遇碰撞的可能性。以太网的这一特点称为<strong>发送的不确定性</strong>。以太网的端到端往返时间 2<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span> 称为<strong>争用期(contention period)</strong>，又称为<strong>碰撞窗囗（collision window)</strong>。只有通过争用期的“考验”，即经过争用期这段时间还没有检测到碰撞，才能肯定这次发送不会发生碰撞。这时才可以放心把这一帧数据顺利发送完毕。</p>
+<p>而在发生碰撞之后呢？协议规定两个傻大个同时都不要再喊话了，冲突的站点都等一段时间之后再发数据。那等多久呢？<br>
+<img src="https://ArsenicX.github.io//post-images/1585411897837.png" alt="" loading="lazy"></p>
+<p>目前为止，整个流程就是，若有两个人在喊话，喊得过程中他们发现还有其他人也在喊话（边发送边监听信道），那这时两个人就同时停下来，等随机时间之后再喊。</p>
+<p>那就又有个问题了，假如我喊的话很少，以至于我喊完了也没有听到别人在喊，所以我认为我的喊话已经完成，就不会重传发生冲突的帧了，这总咋办？<br>
+为了解决这个问题，以太网规定最短帧长为64字节，即512bit。如果要发送的数据非常少，那么必须加入一些填充字节，使帧长不小于64字节。对于10Mbit/s以太网，发送512bit的时间需要51.2<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">μ</span></span></span></span>s，也就是上面提到的争用期。<br>
+由此可见，以太网在发送数据时，如果在争用期（共发送了64字节）没有发生碰撞，那么后续发送的数据就一定不会发生冲突。换句话说，如果发生碰撞，则这时己经发送出去的数据最多最多也就是64字节。因此，<strong>凡长度小于字节的帧都是由于冲突而异常中止的无效帧</strong>，只要收到了这种无效帧，就应当立即将其丢弃。</p>
+<p>以下还有几个小的知识点：</p>
+<ol>
+<li><strong>强化碰撞</strong>的概念。这就是当发送数据的站一旦发现发生了碰撞时，除了立即停止发送数据外，还要再继续发送32比特或48比特的**人为干扰信号(https://ArsenicX.github.io//post-images/1585412781873.png)<br>
+从图可以看出，A站从发送数据开始到发现碰撞并停止发送的时间间隔是T<sub>B</sub>。A站得知碰撞己经发生时所发送的强化碰撞的干扰信号的持续时间是T<sub>J</sub>。B站在得知发生碰撞后，也要发送人为干扰信号，但为简单起见，图没有画出B站所发送的人为干扰信号。发生碰撞使A浪费时间是 T<sub>B</sub>+T<sub>J</sub> ，可是整个信道被占用的时间还要增加一个单程端到端的传播时延<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span>，因此总线被占用的时间是T<sub>B</sub>+T<sub>J</sub>+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span>。</li>
+<li>以太网还规定了<strong>帧间最小间隔</strong>为 9.6<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">μ</span></span></span></span>s，相当于96比特时间。这样做是为了使刚刚收到数据帧的站的接收缓存来得及清理，做好接收下一帧的准备。</li>
+<li>当然显然，使用CSMA/CD 协议时，一个站不可能同时进行发送和接收（但必须边发送边监听信道）。因此使用CSMA/CD协议的以太网不可能进行全双工通信而只能进行双向交替通信（半双工通信)。</li>
+</ol>
+<p><strong>根据以上所讨论的，可以把CSMA/CD协议的要点归纳如下：</strong></p>
+<ol>
+<li>准备发送：适配器从网络层获得一个分组，加上以太网的首部和尾部（见后面的3.4.3节），组成以太网帧，放入适配器的缓存中。但在发送之前，必须先检测信道。</li>
+<li>检测信道：若检测到信道忙，则应不停地检测，一直等待信道转为空闲。若检测到信道空闲，并在96比特时间内信道保持空闲（保证了帧间最小间隔），就发送这个帧。</li>
+<li>在发送过程中仍不停地检测信道，即网络适配器要边发送边监听。这里只有两种可能性：
+<ul>
+<li>发送成功：在争用期内一直未检测到碰撞。这个帧肯定能够发送成功。发送完毕后，其他什么也不做。然后回到（1)。</li>
+<li>发送失败：在争用期内检测到碰撞。这时立即停止发送数据，并按规定发送人为干扰信号。适配器接着就执行指数退避算法，等待 r 倍512比特时间后，返回到步骤（2），继续检测信道。但若重传达16次仍不能成功，则停止重传而向上报错。</li>
+</ul>
+</li>
+</ol>
+<p>以太网每发送完一帧，一定要把己发送的幀暂时保留一下。如果在争用期内检出发生了碰撞，那么还要在推迟一段时间后再把这个暂时保留的帧重传一次。</p>
+</li>
 </ol>
 
             </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://ArsenicX.github.io/others/" class="tag">
+                    others
+                  </a>
+                
+              </div>
             
             
               <div class="next-post">

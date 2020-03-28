@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1585279754542">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1585413483768">
 <link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
 
 
@@ -31,7 +31,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://ArsenicX.github.io/">
-        <img src="https://ArsenicX.github.io//images/avatar.png?v=1585279754542" class="site-logo">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1585413483768" class="site-logo">
         <h1 class="site-title">ArsenicX</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -105,8 +105,8 @@
             <div class="post-content" v-pre>
               <h2 id="一-创建repository并pull到本地">一. 创建repository并pull到本地</h2>
 <ol>
-<li>这里需要注意Repository name一定要是自己的<code>Github账户名.github.io</code><img src="https://i.loli.net/2019/04/08/5caab7b46ea47.jpg" alt="Snipaste_2019-04-08_10-53-21.jpg" loading="lazy"></li>
-<li>创建好了之后在设置页面添加一个默认的界面样式<br>这步是为了在你以后添加博文的时候会有个初始界面，否则你的新博文是不会显示的<br><img src="https://i.loli.net/2019/04/08/5caab883d88a9.jpg" alt="Snipaste_2019-04-08_10-56-54.jpg" loading="lazy"></li>
+<li>这里需要注意Repository name一定要是自己的<code>Github账户名.github.io</code><img src="https://ArsenicX.github.io//post-images/1585280966178.jpg" alt="" loading="lazy"></li>
+<li>创建好了之后在设置页面添加一个默认的界面样式<br>这步是为了在你以后添加博文的时候会有个初始界面，否则你的新博文是不会显示的<br><img src="https://ArsenicX.github.io//post-images/1585280987063.jpg" alt="" loading="lazy"></li>
 <li>将这个新建的项目pull到本地，并将该文件夹下除了<code>.git</code>之外其他文件全部删除（pull项目的具体操作可以看<a href="https://arsenicx.github.io/2018/08/17/git-commands/">Git 常用命令</a>）</li>
 </ol>
 <h2 id="二-创建自己的主页">二. 创建自己的主页</h2>
@@ -137,11 +137,11 @@
 <p>目的：<br>每次更改完_post之后都要先提交到Github，然后等一会才能看到实际效果。对于新手来说，更开始不熟悉Markdown效果肯定会更多的使用git push，费时间和精力。<br>而搭建本地的jekyll环境就可以在本地修改完项目后实时预览到变化，待最终确定完博文之后再提交到Github即可。</p>
 </blockquote>
 <ol>
-<li>首先安装Ruby，进入官网<a href="https://rubyinstaller.org/downloads/">下载页面</a>，下载“WITH DEVKIT”的版本。<br><img src="https://i.loli.net/2019/04/08/5caaedb34ea1f.jpg" alt="" loading="lazy"></li>
-<li>安装过程中，<strong>建议不要改变任何路径，使用默认就好</strong>，并且建议<strong>选中【加入到环境变量中】</strong><br>（因为我已经安装完成了，下图只做说明选项，不用在意版本号和其他）<br><img src="https://i.loli.net/2019/04/08/5caaedbabcb37.png" alt="" loading="lazy"></li>
+<li>首先安装Ruby，进入官网<a href="https://ArsenicX.github.io//post-images/1585281016950.jpg">下载页面</a></li>
+<li>安装过程中，<strong>建议不要改变任何路径，使用默认就好</strong>，并且建议<strong>选中【加入到环境变量中】</strong><br>（因为我已经安装完成了，下图只做说明选项，不用在意版本号和其他）<br><img src="https://ArsenicX.github.io//post-images/1585281023352.webp" alt="" loading="lazy"></li>
 <li>安装完成之后会弹出一个命令行，是让你选择1，2，3来选择安装的，如果你不清楚区别的话按一下<code>Enter</code>回车就好，他会自动检测然后安装<br>（因为我已经安装完成了所以这里就不上图了）</li>
-<li>待安装后在命令提示符中分别运行<code>ruby -v</code>和<code>gem -v</code>，结果如果会出现当前安装版本号，则说明此时可以安装jekyll了。<br><img src="https://i.loli.net/2019/04/08/5caaeff7764db.jpg" alt="Snipaste_2019-04-08_14-52-18.jpg" loading="lazy"><br>运行<code>gem install jekyll</code>来安装jekyll<br><img src="https://i.loli.net/2019/04/08/5caaeff7bb8c9.jpg" alt="Snipaste_2019-04-08_14-52-42.jpg" loading="lazy"></li>
-<li>待安装后运行<code>jekyll --version</code>，出现版本号则说明安装成功。<br>然后将命令行路径移动到repository的目录下并运行<code>jekyll serve</code>，结果如下图的话，恭喜你，你已经搭建完成了本地的jekyll环境，其中红框所圈地址即为你的博客的本地路径，改动过repository后浏览器输入该地址并刷新即可实时预览<br><img src="https://i.loli.net/2019/04/08/5caaf215bb09f.jpg" alt="Snipaste_2019-04-08_15-02-33.jpg" loading="lazy"></li>
+<li>待安装后在命令提示符中分别运行<code>ruby -v</code>和<code>gem -v</code>，结果如果会出现当前安装版本号，则说明此时可以安装jekyll了。<br><img src="https://ArsenicX.github.io//post-images/1585281075413.jpg" alt="" loading="lazy"></li>
+<li>待安装后运行<code>jekyll --version</code>，出现版本号则说明安装成功。<br>然后将命令行路径移动到repository的目录下并运行<code>jekyll serve</code>，结果如下图的话，恭喜你，你已经搭建完成了本地的jekyll环境，其中红框所圈地址即为你的博客的本地路径，改动过repository后浏览器输入该地址并刷新即可实时预览<br><img src="https://ArsenicX.github.io//post-images/1585281081832.jpg" alt="" loading="lazy"></li>
 </ol>
 
             </div>
