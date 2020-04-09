@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1585413584207">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1586451447612">
 <link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
 
 
@@ -19,14 +19,47 @@
 
 
     <meta name="description" content="https://youtube.com/user/fengnz/videos
-元字符		
-任意1个字符	.	
-字母数字+下划线	\w	
-数字	\d	
-空白字符	\s	空格、tab、换行
-锚点		
-边界	\b	用于单词
-^	^Ha表示以Ha开..." />
+
+
+
+元字符
+
+
+
+
+
+
+任意1个字符
+.
+
+
+
+字母数字+下划线
+\w
+
+
+
+数字
+\d
+
+
+
+空白字符
+\s
+空格、tab、换行
+
+
+
+
+
+
+
+
+
+
+
+锚点
+..." />
     <meta name="keywords" content="others" />
   </head>
   <body>
@@ -36,7 +69,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://ArsenicX.github.io/">
-        <img src="https://ArsenicX.github.io//images/avatar.png?v=1585413584207" class="site-logo">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1586451447612" class="site-logo">
         <h1 class="site-title">ArsenicX</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -109,35 +142,191 @@
             
             <div class="post-content" v-pre>
               <p>https://youtube.com/user/fengnz/videos</p>
-<p>元字符		<br>
-任意1个字符	.	<br>
-字母数字+下划线	\w	<br>
-数字	\d	<br>
-空白字符	\s	空格、tab、换行</p>
-<p>锚点		<br>
-边界	\b	用于单词<br>
-^	^Ha表示以Ha开头的句子。注意是句子，而不是词组<br>
-在[]中，<sup>表示非。[</sup>a-z]表示不是a-z的任意字符<br>
-$	Ha$表示以Ha结尾的句子。注意是句子，而不是词组</p>
-<p>重复		<br>
-出现0次或者一次	?	?前面的字符可以出现0次或者1次<br>
-出现0次或者多次	*	*前面的字符可以出现0次或者多次<br>
-出现一次或者多次	+	+前面的字符可以出现一次或者多次<br>
-出现a次到b次	{a,b}	{}前面的字符可以出现a次到b次</p>
-<p>贪婪模式	*	尽可能多地匹配相符内容<br>
-懒惰模式	*?	尽可能少地匹配相符内容<br>
-侵占模式	*+	尽可能多地匹配相符内容, 绝不留给其他部分使用</p>
-<p>组		<br>
-字符集	[]	注意：这是一个字符<br>
-[ab4.7*/f] 表示匹配“ab4.7*/f”中的任意一个<br>
-[A-z3-87] 中的“-”是范围，表示匹配从大写A到小写z或从3到87中的任何一个 （A=65，z=122，有大小顺序之分）<br>
-分组	()	M(a|b|ab) 表示匹配Ma、Mb和Mab<br>
-$1、$2...可以用来代替原文中匹配到的组<br>
-在()中加入“?:”，表示不设为分组，例：&quot;(?:a)(b)&quot; 此时$1就是&quot;b&quot;<br>
-前瞻	(?=)	检查全部字符串中是否包括所需字符<br>
-(?=a1).<em>b2: 表示先检查整段字符串中是否含有a1，如果含有，就</em>a1的位置*开始匹配剩下的东西（即&quot;.*b2&quot;）;若没有，则匹配失败</p>
-<p>替换		<br>
-自己	\0</p>
+<table>
+<thead>
+<tr>
+<th>元字符</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>任意1个字符</td>
+<td>.</td>
+<td></td>
+</tr>
+<tr>
+<td>字母数字+下划线</td>
+<td>\w</td>
+<td></td>
+</tr>
+<tr>
+<td>数字</td>
+<td>\d</td>
+<td></td>
+</tr>
+<tr>
+<td>空白字符</td>
+<td>\s</td>
+<td>空格、tab、换行</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>锚点</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>边界</td>
+<td>\b</td>
+<td>用于单词</td>
+</tr>
+<tr>
+<td></td>
+<td>^</td>
+<td>^Ha表示以Ha开头的句子。注意是句子，而不是词组</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>在[]中，^表示非。<code>[^a-z]</code>表示：不是a-z的任意字符</td>
+</tr>
+<tr>
+<td></td>
+<td>$</td>
+<td>Ha$表示以Ha结尾的句子。注意是句子，而不是词组</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>重复</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>出现0次或者一次</td>
+<td>?</td>
+<td>?前面的字符可以出现0次或者1次</td>
+</tr>
+<tr>
+<td>出现0次或者多次</td>
+<td>*</td>
+<td>*前面的字符可以出现0次或者多次</td>
+</tr>
+<tr>
+<td>出现一次或者多次</td>
+<td>+</td>
+<td>+前面的字符可以出现一次或者多次</td>
+</tr>
+<tr>
+<td>出现a次到b次</td>
+<td>{a,b}</td>
+<td>{}前面的字符可以出现a次到b次</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>贪婪模式</td>
+<td>*</td>
+<td>尽可能多地匹配相符内容</td>
+</tr>
+<tr>
+<td>懒惰模式</td>
+<td>*?</td>
+<td>尽可能少地匹配相符内容</td>
+</tr>
+<tr>
+<td>侵占模式</td>
+<td>*+</td>
+<td>尽可能多地匹配相符内容, 绝不留给其他部分使用</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>组</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字符集</td>
+<td>[]</td>
+<td>注意：这是一个字符</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>[ab4.7*/f] 表示匹配“ab4.7*/f”中的任意一个</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>[A-z3-87] 中的“-”是范围，表示匹配从大写A到小写z或从3到87中的任何一个 <br>（A=65，z=122，有大小顺序之分）</td>
+</tr>
+<tr>
+<td>分组</td>
+<td>()</td>
+<td><code>M(a|b|ab)</code>表示匹配Ma、Mb和Mab</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>$1、$2...可以用来代替原文中匹配到的组</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>在()中加入“?:”，表示不设为分组，例：&quot;(?:a)(b)&quot; 此时$1就是&quot;b&quot;</td>
+</tr>
+<tr>
+<td>前瞻</td>
+<td>(?=)</td>
+<td>检查全部字符串中是否包括所需字符</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>(?=a1).<em>b2: 表示先检查整段字符串中是否含有a1，如果含有，就</em>a1的位置*开始匹配剩下的东西（即&quot;.*b2&quot;）;若没有，则匹配失败</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>替换</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自己</td>
+<td>\0</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
             </div>
             
