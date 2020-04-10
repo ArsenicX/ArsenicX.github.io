@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ArsenicX.github.io/</id>
     <title>ArsenicX</title>
-    <updated>2020-04-09T16:57:33.023Z</updated>
+    <updated>2020-04-10T13:04:57.103Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ArsenicX.github.io/"/>
     <link rel="self" href="https://ArsenicX.github.io/atom.xml"/>
@@ -409,7 +409,18 @@ HFC网是在目前覆盖面很广的有线电视网 CATV 的基础上开发的�
         <link href="https://ArsenicX.github.io/regular-expression/">
         </link>
         <updated>2020-03-25T05:01:25.000Z</updated>
-        <content type="html"><![CDATA[<p>https://youtube.com/user/fengnz/videos</p>
+        <content type="html"><![CDATA[<p>https://regex101.com</p>
+<style>
+table th:first-of-type {
+    width: 20%;
+}
+table th:nth-of-type(2) {
+    width: 10%;
+}
+table th:nth-of-type(3) {
+    width: 70%;
+}
+</style>
 <table>
 <thead>
 <tr>
@@ -497,7 +508,7 @@ HFC网是在目前覆盖面很广的有线电视网 CATV 的基础上开发的�
 <td>*前面的字符可以出现0次或者多次</td>
 </tr>
 <tr>
-<td>出现一次或者多次</td>
+<td>出现1次或者多次</td>
 <td>+</td>
 <td>+前面的字符可以出现一次或者多次</td>
 </tr>
@@ -550,7 +561,7 @@ HFC网是在目前覆盖面很广的有线电视网 CATV 的基础上开发的�
 <tr>
 <td></td>
 <td></td>
-<td>[A-z3-87] 中的“-”是范围，表示匹配从大写A到小写z或从3到87中的任何一个 <br>（A=65，z=122，有大小顺序之分）</td>
+<td>[A-z3-87] 中的“-”是范围，表示匹配从大A到小z或从3到87中的任何一个 <br>（A=65，z=122，有大小顺序之分）</td>
 </tr>
 <tr>
 <td>分组</td>
@@ -568,14 +579,39 @@ HFC网是在目前覆盖面很广的有线电视网 CATV 的基础上开发的�
 <td>在()中加入“?:”，表示不设为分组，例：&quot;(?:a)(b)&quot; 此时$1就是&quot;b&quot;</td>
 </tr>
 <tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>前瞻</td>
 <td>(?=)</td>
-<td>检查全部字符串中是否包括所需字符</td>
+<td>检查特定字符串之后是否包括所需字符</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td>(?=a1).<em>b2: 表示先检查整段字符串中是否含有a1，如果含有，就</em>a1的位置*开始匹配剩下的东西（即&quot;.*b2&quot;）;若没有，则匹配失败</td>
+<td>abc(?=de)：表示先检查整段字符串中是否含有abc，如果含有，就看<strong>abc的位置</strong>后面是不是剩下的东西（即<code>de</code>）;若不是，则匹配失败</td>
+</tr>
+<tr>
+<td>后顾</td>
+<td>(?&lt;=)</td>
+<td>检查特定字符串之前是否包括所需字符</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>(?&lt;=de)abc：表示先检查整段字符串中是否含有abc，如果含有，就看<strong>abc的位置</strong>前面是不是剩下的东西（即<code>de</code>）;若不是，则匹配失败</td>
+</tr>
+<tr>
+<td>瞻前顾后</td>
+<td></td>
+<td>关于前瞻后顾中的等号=，可以换成叹号!来表示否定。<br>即如果有剩下的内容则不匹配，用于<strong>排除特定字符串</strong>的场景</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>比如：<code>adv(?!ice)</code>会过滤 adv、 advert 以及 advertisement，但不会过滤 advice</td>
 </tr>
 </tbody>
 </table>

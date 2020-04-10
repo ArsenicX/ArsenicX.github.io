@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1586451447612">
+<link rel="shortcut icon" href="https://ArsenicX.github.io//favicon.ico?v=1586523892200">
 <link rel="stylesheet" href="https://ArsenicX.github.io//styles/main.css">
 
 
@@ -18,48 +18,15 @@
 
 
 
-    <meta name="description" content="https://youtube.com/user/fengnz/videos
+    <meta name="description" content="https://regex101.com
 
-
-
-元字符
-
-
-
-
-
-
-任意1个字符
-.
-
-
-
-字母数字+下划线
-\w
-
-
-
-数字
-\d
-
-
-
-空白字符
-\s
-空格、tab、换行
-
-
-
-
-
-
-
-
-
-
-
-锚点
-..." />
+table th:first-of-type {
+    width: 20%;
+}
+table th:nth-of-type(2) {
+    width: 10%;
+}
+table th:nt..." />
     <meta name="keywords" content="others" />
   </head>
   <body>
@@ -69,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://ArsenicX.github.io/">
-        <img src="https://ArsenicX.github.io//images/avatar.png?v=1586451447612" class="site-logo">
+        <img src="https://ArsenicX.github.io//images/avatar.png?v=1586523892200" class="site-logo">
         <h1 class="site-title">ArsenicX</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -141,7 +108,18 @@
             <div class="post-date">2020-03-25</div>
             
             <div class="post-content" v-pre>
-              <p>https://youtube.com/user/fengnz/videos</p>
+              <p>https://regex101.com</p>
+<style>
+table th:first-of-type {
+    width: 20%;
+}
+table th:nth-of-type(2) {
+    width: 10%;
+}
+table th:nth-of-type(3) {
+    width: 70%;
+}
+</style>
 <table>
 <thead>
 <tr>
@@ -229,7 +207,7 @@
 <td>*前面的字符可以出现0次或者多次</td>
 </tr>
 <tr>
-<td>出现一次或者多次</td>
+<td>出现1次或者多次</td>
 <td>+</td>
 <td>+前面的字符可以出现一次或者多次</td>
 </tr>
@@ -282,7 +260,7 @@
 <tr>
 <td></td>
 <td></td>
-<td>[A-z3-87] 中的“-”是范围，表示匹配从大写A到小写z或从3到87中的任何一个 <br>（A=65，z=122，有大小顺序之分）</td>
+<td>[A-z3-87] 中的“-”是范围，表示匹配从大A到小z或从3到87中的任何一个 <br>（A=65，z=122，有大小顺序之分）</td>
 </tr>
 <tr>
 <td>分组</td>
@@ -300,14 +278,39 @@
 <td>在()中加入“?:”，表示不设为分组，例：&quot;(?:a)(b)&quot; 此时$1就是&quot;b&quot;</td>
 </tr>
 <tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>前瞻</td>
 <td>(?=)</td>
-<td>检查全部字符串中是否包括所需字符</td>
+<td>检查特定字符串之后是否包括所需字符</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
-<td>(?=a1).<em>b2: 表示先检查整段字符串中是否含有a1，如果含有，就</em>a1的位置*开始匹配剩下的东西（即&quot;.*b2&quot;）;若没有，则匹配失败</td>
+<td>abc(?=de)：表示先检查整段字符串中是否含有abc，如果含有，就看<strong>abc的位置</strong>后面是不是剩下的东西（即<code>de</code>）;若不是，则匹配失败</td>
+</tr>
+<tr>
+<td>后顾</td>
+<td>(?&lt;=)</td>
+<td>检查特定字符串之前是否包括所需字符</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>(?&lt;=de)abc：表示先检查整段字符串中是否含有abc，如果含有，就看<strong>abc的位置</strong>前面是不是剩下的东西（即<code>de</code>）;若不是，则匹配失败</td>
+</tr>
+<tr>
+<td>瞻前顾后</td>
+<td></td>
+<td>关于前瞻后顾中的等号=，可以换成叹号!来表示否定。<br>即如果有剩下的内容则不匹配，用于<strong>排除特定字符串</strong>的场景</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>比如：<code>adv(?!ice)</code>会过滤 adv、 advert 以及 advertisement，但不会过滤 advice</td>
 </tr>
 </tbody>
 </table>
