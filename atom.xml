@@ -2,13 +2,63 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ArsenicX.github.io/</id>
     <title>ArsenicX</title>
-    <updated>2020-04-10T13:04:57.103Z</updated>
+    <updated>2020-04-13T12:37:13.506Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ArsenicX.github.io/"/>
     <link rel="self" href="https://ArsenicX.github.io/atom.xml"/>
     <logo>https://ArsenicX.github.io/images/avatar.png</logo>
     <icon>https://ArsenicX.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, ArsenicX</rights>
+    <entry>
+        <title type="html"><![CDATA[操作系统]]></title>
+        <id>https://ArsenicX.github.io/cao-zuo-xi-tong/</id>
+        <link href="https://ArsenicX.github.io/cao-zuo-xi-tong/">
+        </link>
+        <updated>2020-04-13T11:23:56.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>参考书目：《计算机操作系统（第四版）》 - 西安电子科技大学出版社<br>
+编排顺序：依靠参考书顺序</p>
+</blockquote>
+<h1 id="第一章操作系统引论">第一章：操作系统引论</h1>
+<h2 id="第一节os的作用">第一节：OS的作用</h2>
+<ol>
+<li>OS是用户与计算机硬件系统之间的接口<br>
+<img src="https://ArsenicX.github.io//post-images/1586778608519.png" alt="" loading="lazy"></li>
+<li>OS是计算机系统资源的管理者</li>
+<li>OS实现了对计算机资源的抽象<br>
+<img src="https://ArsenicX.github.io//post-images/1586778620197.png" alt="" loading="lazy"></li>
+</ol>
+<h2 id="第二节os的发展过程略">第二节：OS的发展过程（略）</h2>
+<h2 id="第三节os的基本特性">第三节：OS的基本特性</h2>
+<h3 id="1-并发">1. 并发：</h3>
+<ol>
+<li>并行&amp;并发<br>
+并行性：多个事件同一时刻发生<br>
+并发性：多个事件同一时间间隔发生</li>
+<li>进程（第二章详讲）<br>
+进程是指系统中独立运行并作为资源分配的基本单位，它是由一组机器指令数据和堆栈等组成的。是一个能独立运行的活动实体</li>
+</ol>
+<h3 id="2-共享">2. 共享：</h3>
+<p>有两种实现方式：</p>
+<ol>
+<li>互斥共享：主要针对于临界资源</li>
+<li>同时访问：针对于其他资源，比如磁盘设备。这里的同时，其实是宏观意义上的，在微观上看是交替进行的</li>
+</ol>
+<h3 id="3-虚拟将一条物理信道变成若干条逻辑信道">3. 虚拟：将一条物理信道变成若干条逻辑信道</h3>
+<p>有两种技术可以实现虚拟：</p>
+<ol>
+<li>时分复用技术：可以用来处理虚拟机或设备
+<ul>
+<li>虚拟处理机：利用多道程序设计技术，为每道程序建立一个进程，让多道程序并发地执行，以此来分时使用一台处理机。此时，虽然系统中只有一台处理机，但它却能分时为多个用户服务。使每个终端用户都认为是有一个处理机在专门为他服务</li>
+<li>虚拟设备：将一台物理I/O设备虚拟为多台逻辑上的I/O设备，并允许每个用户占用一台逻辑上的I/O设备，这样便可使原来仅允许在一段时间内由一个用户访问的设备（即临界资源）变为在一段时间内允许多用户“同时”访问的共享设备</li>
+</ul>
+</li>
+<li>空分复用技术：<br>
+类似于电信业中将一个频率范围非常宽的信道，划分成多个频率范围较窄的信道，然后使用其中的不同频率范围的信道供用户通话<br>
+如果说时分复用技术是利用处理机的空闲时间运行其他程序（见缝插针）来提高<strong>处理机</strong>的利用率，那么空分复用技术就是存储器的空闲空间，分区域存放和运行其他多道程序，从而提高<strong>内存</strong>的利用率</li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[计算机网络]]></title>
         <id>https://ArsenicX.github.io/ji-suan-ji-wang-luo/</id>
@@ -1452,63 +1502,6 @@ for(Integer key: keySet){
     System.out.println(key);
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java 总结]]></title>
-        <id>https://ArsenicX.github.io/java-zong-jie/</id>
-        <link href="https://ArsenicX.github.io/java-zong-jie/">
-        </link>
-        <updated>2020-02-18T15:02:00.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="入门">入门</h2>
-<ul>
-<li>成员变量不赋值就可以直接使用，int、byte等类型为0，boolean为fault，引用类型为null<br>局部变量必须先赋值，才能使用</li>
-<li>final：
-<ul>
-<li>修饰类--------表示其不能被继承，即最终类</li>
-<li>修饰方法-----表示其不能被重写，即最终方法</li>
-<li>修饰变量-----表示其不能被修改，即常量</li>
-</ul>
-</li>
-<li>abstract：
-<ul>
-<li>如果当前类有抽象方法，或继承自一个抽象类/抽象接口，但没有全部实现该类/该接口的抽象方法，则必须定义为抽象类<br>抽象类可以包含成员变量及构造方法，但不能被实例化，即不能new</li>
-<li>不能用来修饰成员变量和构造方法</li>
-<li>不能用private修饰，不能和static，final，native同时修饰同一方法</li>
-</ul>
-</li>
-<li><a href="https://blog.csdn.net/nvd11/article/details/18706087">Java 里的 abstract 和 final 关键字</a></li>
-</ul>
-<h2 id="进阶">进阶</h2>
-<ul>
-<li>
-<p>继承 &amp; 多态 &amp; 接口： <em>instanceof</em> 类来判断该引用型变量所指向的对象是否属于该类或该类的子类</p>
-<ol>
-<li>继承：<br>子类的修饰权限和父类必须要保持一致或更加公开<br>在构造子类对象的时候，会首先调用父类的无参构造方法；如果父类没有无参构造方法，则报错<br>如果要在子类的构造方法中明确写出调用基类方法super( )的话，则需要写在子类构造方法的<strong>第一行</strong></li>
-<li>多态：<br>子类方法的可访问性和父类必须要保持一致或更加公开<br>父类的私有方法不能被重写，即使子类中定义了一个同名的方法，也是一个新的方法，和父类方法无关<br>不能重写静态方法</li>
-<li>接口：<br>接口中定义的成员变量都是 static &amp; final<br>接口中定义的方法默认是、也只能是public类型；同时也只能是抽象方法（abstract，不能有方法体）、默认方法（必须用default修饰）或类方法（static）</li>
-</ol>
-</li>
-<li>
-<p>异常：</p>
-<ol>
-<li>
-<p>Try  Catch：<br>
-用竖线使一个try catch捕获多个异常，但是这种方式捕捉到的异常不能重新赋值，只能是e</p>
-<pre><code>try{...}
-catch(NumberFormatException  | ArithmeeticException e) {...}
-</code></pre>
-<p>即使catch中有return，代码也会执行finally中的语句，除非catch中有System.exit( )（退出应用程序）<br>执行内部的try如果没有遇到匹配的catch块，则检查外部的catch块</p>
-</li>
-<li>
-<p>Throw/ Throws：<br>throw用于try语句中，在可能出现异常的语句中 throw new Exception(&quot;... ...&quot;)<br>throws用于方法外部，如果自定义的方法可能会抛出异常，则方法名外加上 throws IOException,Exception....，然后在调用该方法的地方使用catch捕获</p>
-</li>
-<li>
-<p>自定义异常：如果总是在运行时产生异常，且不易预测在什么时候发生异常，则定义为RuntimeException；否则定义为Exception</p>
-</li>
-</ol>
-</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
