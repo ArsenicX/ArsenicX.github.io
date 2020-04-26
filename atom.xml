@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ArsenicX.github.io/</id>
     <title>ArsenicX</title>
-    <updated>2020-04-26T08:11:32.062Z</updated>
+    <updated>2020-04-26T08:23:32.446Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ArsenicX.github.io/"/>
     <link rel="self" href="https://ArsenicX.github.io/atom.xml"/>
@@ -477,20 +477,24 @@ HFC网是在目前覆盖面很广的有线电视网 CATV 的基础上开发的�
 </li>
 </ol>
 <a id="以太网的两个标准"/>
-### 补充：
-- 以太网的两个标准：
-以太网有DIX Ethernet V2和IEEE 802.3 两个标准，但是差别很小。
-而后因为种种原因，标准委员会也没有统一标准，反而还被迫制定了好几种标准。但是为了不同的标准也能适配，委员会将数据链路层分为了2层：`逻辑链路控制LLC(Logical Link Control)`子层和`媒体接入控制MAC(Medium Access Control)`子层，其中，与接入到传输媒体有关的内容都放在MAC子层上，而LLC子层与传输媒体无关
-![](https://ArsenicX.github.io//post-images/1585409955296.png)
-随着局域网市场的发展，DIX标准被越来越多的使用，IEEE已不再被使用。也正因如此，适配IEEE标准的LLC子层作用就不大了。现如今很多厂商生产适配器时都甚至不会再装LLC协议了
-- 适配器的作用：
-适配器本来是在主机箱内插入的一块网络接口板（或者是在笔记本电脑中插入一块PCMCIA卡一一个人计算机存储器卡接口适配器）。这种接口板又称为网络接囗卡NIC(NetworkinterfaceCard)或简称为`网卡`。这种通信适配器上面装有处理器和存储器（包括RAM和ROM)。
-<pre><code>简单来讲，计算机与外界局域网的连接就是通过通信适配器（adapt）进行的。
-适配器和局域网之间的通信是通过电缆或双绞线以**串行传输**方式进行的，而适配器和计算机之间的通信则是通过计算机主板上的I/O总线以**并行传输**方式进行的。因此，适配器的一个重要功能就是要进行数据串行传输和并行传输的转换。同时由于网络上的数据率和计算机总线上的数据率并不相同，因此在适配器中必须装有对数据进行缓存的存储芯片。在主板上插入适配器时，还必须把管理该适配器的设备驱动程序安装在计算机的操作系统中。这个驱动程序以后就会告诉适配器，应当从存储器的什么位置上把多长的数据块发送到局域网，或者应当在存储器的什么位置上把局域网传送过来的数据块存储下来。适配器还要能够实现以太网协议。
-
-注意，计算机的硬件地址就在适配器的ROM中，而计算机的软件地址一一IP地址则在计算机的存储器中。
-</code></pre>
-<figure data-type="image" tabindex="2"><img src="https://ArsenicX.github.io//post-images/1585410048907.png" alt="" loading="lazy"></figure>
+<h3 id="补充">补充：</h3>
+<ul>
+<li>
+<p>以太网的两个标准：<br>
+以太网有DIX Ethernet V2和IEEE 802.3 两个标准，但是差别很小。<br>
+而后因为种种原因，标准委员会也没有统一标准，反而还被迫制定了好几种标准。但是为了不同的标准也能适配，委员会将数据链路层分为了2层：<code>逻辑链路控制LLC(Logical Link Control)</code>子层和<code>媒体接入控制MAC(Medium Access Control)</code>子层，其中，与接入到传输媒体有关的内容都放在MAC子层上，而LLC子层与传输媒体无关<br>
+<img src="https://ArsenicX.github.io//post-images/1585409955296.png" alt="" loading="lazy"><br>
+随着局域网市场的发展，DIX标准被越来越多的使用，IEEE已不再被使用。也正因如此，适配IEEE标准的LLC子层作用就不大了。现如今很多厂商生产适配器时都甚至不会再装LLC协议了</p>
+</li>
+<li>
+<p>适配器的作用：<br>
+适配器本来是在主机箱内插入的一块网络接口板（或者是在笔记本电脑中插入一块PCMCIA卡一一个人计算机存储器卡接口适配器）。这种接口板又称为网络接囗卡NIC(NetworkinterfaceCard)或简称为<code>网卡</code>。这种通信适配器上面装有处理器和存储器（包括RAM和ROM)。</p>
+<p>简单来讲，计算机与外界局域网的连接就是通过通信适配器（adapt）进行的。<br>
+适配器和局域网之间的通信是通过电缆或双绞线以<strong>串行传输</strong>方式进行的，而适配器和计算机之间的通信则是通过计算机主板上的I/O总线以<strong>并行传输</strong>方式进行的。因此，适配器的一个重要功能就是要进行数据串行传输和并行传输的转换。同时由于网络上的数据率和计算机总线上的数据率并不相同，因此在适配器中必须装有对数据进行缓存的存储芯片。在主板上插入适配器时，还必须把管理该适配器的设备驱动程序安装在计算机的操作系统中。这个驱动程序以后就会告诉适配器，应当从存储器的什么位置上把多长的数据块发送到局域网，或者应当在存储器的什么位置上把局域网传送过来的数据块存储下来。适配器还要能够实现以太网协议。</p>
+<p>注意，计算机的硬件地址就在适配器的ROM中，而计算机的软件地址一一IP地址则在计算机的存储器中。<br>
+<img src="https://ArsenicX.github.io//post-images/1585410048907.png" alt="" loading="lazy"></p>
+</li>
+</ul>
 <ol start="2">
 <li>
 <p>CSMA/CD 协议<br>
